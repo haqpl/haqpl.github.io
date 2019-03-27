@@ -89,7 +89,8 @@ We have a function called msgKnoxxs which is responsible of showing notification
 function msgKnoxss(text) {
    text = text.replace(/(\r\n|\n|\r)/gm, " ");
    
-   browser.tabs.executeScript(null, { code: "var myEvent = new CustomEvent('knoxss_status',{'detail': '"+text+"'}); document.body.dispatchEvent(myEvent);"});
+   browser.tabs.executeScript(null, { code: "var myEvent = new CustomEvent('knoxss_status',{'detail': '"+text+"'});
+   document.body.dispatchEvent(myEvent);"});
    
    browser.notifications.create({
      "type": "basic",
@@ -100,4 +101,4 @@ function msgKnoxss(text) {
 }
 ```
 
-```javascript
+```
