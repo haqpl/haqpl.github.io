@@ -35,6 +35,8 @@ Extensions are HTML and JavaScript code running along the browser. Is has XPI ex
 
 ![manifest.json](https://mdn.mozillademos.org/files/13669/webextension-anatomy.png){:height="500px" style="display: block; margin: 0 auto"}
 
+Add-ons have it's own permission system describing how much we can interfere with web pages. We need a permission called `"activeTab"`, which was set already by the author.
+
 There are three different types of JavaScript code when talking about extensions:
 
 | Name  | Properties |
@@ -75,8 +77,27 @@ function notify(message) {
   });
 }
 ```
-This would be helpful if we want to send a message from Content script and receive it in Background script, but I need to do something opposite. Second described operations would do it for us, but it looked to complicated for me.
+This would be helpful if we want to send a message from Content script and receive it in Background script, but I need to do something opposite. Second described operations would do it for us, but it looked too complicated for me.
 
 I know that JavaScript allow us to send **events** to HTML tags and saw that Selenium allows to catch those events, so lets look closer to that mechanism.
 
-### 
+### Custom events:
+
+We have a function called msgKnoxxs which is responsible of showing notifications each time Knoxss has done it's job. I added one-line of code which should fire an custom event on HTML object called `document.body`:
+
+```javascript
+function msgKnoxss(text) {
+   text = text.replace(/(\r\n|\n|\r)/gm, " ");
+   
+   browser.tabs.executeScript(null, { code: "var myEvent = new CustomEvent('knoxss_status',{'detail': '"+text+"'}); document.body.dispatchEvent(myEvent);"});
+   
+   browser.notifications.create({
+     "type": "basic",
+     "iconUrl": browser.extension.getURL("icons/k.png"),
+     "title": "KNOXSS Msg Service",
+     "message": text
+   });
+}
+```
+
+```javascript
