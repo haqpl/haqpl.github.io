@@ -7,7 +7,7 @@ author:
 
 baseurl: /
 disqus: haqpl-blog
-
+google_analytics: UA-137044900-1
 
 source: .
 destination: ./_site
