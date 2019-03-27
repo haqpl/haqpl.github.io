@@ -11,9 +11,19 @@ Moreover, I was using Selenium and needed information from extension in my Pytho
 ### What I found:
 
 * [Communication between HTML and your extension](https://developer.mozilla.org/en-US/docs/Archive/Add-ons/Communication_between_HTML_and_your_extension) - described usage of Custom events which gave me an idea of trying it
-* [Can my webdriver script catch a event from the webpage](https://stackoverflow.com/questions/35884230/can-my-webdriver-script-catch-a-event-from-the-webpage) - Catching JavaScript events through Selenium Webdriver
+* [Can my webdriver script catch a event from the webpage](https://stackoverflow.com/questions/35884230/can-my-webdriver-script-catch-a-event-from-the-webpage) - Catching JavaScript events by Selenium Webdriver
 
 ### What I tried:
 
 1. Intercepting Console API entries in Selenium - [Support for Selenium’s logging interface](https://github.com/mozilla/geckodriver/issues/284) - didn't work for me
 2. Communicating with alert box (editing extension code and add ```alert(status)``` somewhere in msgKnoxss function - possible but not elegant.
+
+### Some theory about extensions:
+
+There are three different types of JavaScript code when talking about extensions:
+
+| Name  | Properties |
+| ------------- | ------------- |
+| Page script  | Code running in context of web page  |
+| Content script  | Code running in context of extension, could be injected in page script, proxy between page and background scripts  |
+| Background script  | Logic of the extension, could not communicate with page script  |
