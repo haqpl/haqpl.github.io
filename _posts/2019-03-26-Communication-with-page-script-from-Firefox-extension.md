@@ -34,11 +34,40 @@ There are three different types of JavaScript code when talking about extensions
 
 | Name  | Properties |
 | ------------- | ------------- |
-| Page script  | Code running in context of the web page |
-| Content script  | Part of the extension but running in context of the web page. I **can** inject code here using Selenium  |
+| Page script  | Code running in context of the web page. I **can** inject code here using Selenium|
+| Content script  | Part of the extension but running in context of the web page.   |
 | Background script  | Logic of the extension, **could not** communicate with page script - my purpose  |
 
 As mentioned [here](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#Communicating_with_background_scripts):
 > There are two basic patterns for communicating between the background scripts and content scripts: you can send one-off messages, with an optional response, or you can set up a longer-lived connection between the two sides, and use that connection to exchange messages.
 
+Everything looks great in first sight, but lets look on the code:
+
+```
+// content-script.js
+
+window.addEventListener("click", notifyExtension);
+
+function notifyExtension(e) {
+  if (e.target.tagName != "A") {
+    return;
+  }
+  browser.runtime.sendMessage({"url": e.target.href});
+}
+```
+
+```
+// background-script.js
+
+browser.runtime.onMessage.addListener(notify);
+
+function notify(message) {
+  browser.notifications.create({
+    "type": "basic",
+    "iconUrl": browser.extension.getURL("link.png"),
+    "title": "You clicked a link!",
+    "message": message.url
+  });
+}
+```
 
