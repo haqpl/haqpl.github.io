@@ -16,7 +16,7 @@ Moreover, I was using Selenium and needed information from extension in my Pytho
 ### What I tried:
 
 1. Intercepting Console API entries in Selenium - [Support for Selenium’s logging interface](https://github.com/mozilla/geckodriver/issues/284) - didn't work for me
-2. Communicating with alert box (editing extension code and add ```alert(status)``` somewhere in msgKnoxss function - possible but not elegant.
+2. Communicating with alert box (editing extension code and add `alert(status)` somewhere in msgKnoxss function - possible but not elegant.
 
 ### Some theory about extensions:
 
