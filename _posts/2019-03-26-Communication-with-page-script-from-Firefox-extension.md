@@ -27,7 +27,7 @@ I've found plenty of Stackoverflow drips but it were to complicated for my probl
 ### What I tried:
 
 1. Intercepting Console API entries in Selenium - [Support for Selenium’s logging interface](https://github.com/mozilla/geckodriver/issues/284) - didn't work for me
-2. Communicating with alert box (editing extension code and adding `alert(status)` somewhere in msgKnoxss function - possible but not elegant.
+2. Communicating with alert box (editing extension code and adding `alert(status)` somewhere in msgKnoxss function and handling it with Selenium as described [here](https://seleniumhq.github.io/selenium/docs/api/py/webdriver/selenium.webdriver.common.alert.html) - possible but not elegant. 
 
 ### Some theory about extensions:
 
