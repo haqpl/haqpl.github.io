@@ -2,6 +2,7 @@
 title: Communication between page script and Firefox extension
 published: true
 ---
+---
 
 ### [](#header-3)The problem:
 
