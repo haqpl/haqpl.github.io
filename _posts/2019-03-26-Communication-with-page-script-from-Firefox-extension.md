@@ -31,9 +31,9 @@ I've found plenty of Stackoverflow drips but it were to complicated for my probl
 
 ### Some theory about extensions:
 
-Extensions are HTML and JavaScript code running along the browser. Is has XPI extension which is normall **ZIP** archive so we can edit it easly.
+Extensions are HTML and JavaScript code running along the browser. Is has XPI extension which is normall **ZIP** archive so we can edit it files easily. Lets look on contents of the __manifest.json__ file:
 
-![manifest.json](https://mdn.mozillademos.org/files/13669/webextension-anatomy.png)
+![manifest.json](https://mdn.mozillademos.org/files/13669/webextension-anatomy.png){:height:500px}
 
 There are three different types of JavaScript code when talking about extensions:
 
