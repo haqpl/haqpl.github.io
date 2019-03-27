@@ -8,5 +8,5 @@ Few days ago I wrote a tool which automates Knoxss extension. In the beginning m
 
 ### What I found:
 
-(https://developer.mozilla.org/en-US/docs/Archive/Add-ons/Communication_between_HTML_and_your_extension)
+[Communication_between_HTML_and_your_extension](https://developer.mozilla.org/en-US/docs/Archive/Add-ons/Communication_between_HTML_and_your_extension)
 
