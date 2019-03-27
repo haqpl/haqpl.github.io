@@ -3,4 +3,4 @@ layout: page
 title: About
 ---
 
-Something about me.
+I'm security ninja and technology polyglot. Pug lover and drum'n'bass head! Currently bassed in Lodz, Poland. 
