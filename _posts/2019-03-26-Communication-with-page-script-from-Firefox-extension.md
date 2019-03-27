@@ -33,7 +33,7 @@ I've found plenty of Stackoverflow drips but it was too complicated for my probl
 
 Extensions are HTML and JavaScript code running among the browser. It has XPI extension and are normall **ZIP** archives so we can edit it files easily. Let's look on contents of the _manifest.json_ file:
 
-![manifest.json](https://mdn.mozillademos.org/files/13669/webextension-anatomy.png){:height="500px" style="display: block; margin: 0 auto"}
+![manifest.json](https://mdn.mozillademos.org/files/13669/webextension-anatomy.png){:height="500px" style="display: block; margin: 0 auto"} "https://mdn.mozillademos.org/files/13669/webextension-anatomy.png"
 
 Add-ons have its own permission system describing how much we can interfere with web pages. We need permission called `"activeTab"`, which was set already by the author.
 
