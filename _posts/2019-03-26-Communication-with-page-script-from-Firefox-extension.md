@@ -31,6 +31,10 @@ I've found plenty of Stackoverflow drips but it were to complicated for my probl
 
 ### Some theory about extensions:
 
+Extensions are HTML and JavaScript code running along the browser. Is has XPI extension which is normall **ZIP** archive so we can edit it easly.
+
+![](https://mdn.mozillademos.org/files/13669/webextension-anatomy.png)
+
 There are three different types of JavaScript code when talking about extensions:
 
 | Name  | Properties |
@@ -73,4 +77,6 @@ function notify(message) {
 ```
 This would be helpful if we want to send a message from Content script and receive it in Background script, but I need to do something opposite. Second described operations would do it for us, but it looked to complicated for me.
 
-I know that JavaScript allow us to send events to HTML tags and saw that Selenium allows to catch those events, so lets look closer to that mechanism.
+I know that JavaScript allow us to send **events** to HTML tags and saw that Selenium allows to catch those events, so lets look closer to that mechanism.
+
+### 
