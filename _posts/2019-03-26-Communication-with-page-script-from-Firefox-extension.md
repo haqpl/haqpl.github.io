@@ -24,6 +24,6 @@ There are three different types of JavaScript code when talking about extensions
 
 | Name  | Properties |
 | ------------- | ------------- |
-| Page script  | Code running in context of web page  |
-| Content script  | Code running in context of extension, could be injected in page script, proxy between page and background scripts  |
-| Background script  | Logic of the extension, could not communicate with page script  |
+| Page script  | Code running in context of the web page  |
+| Content script  | Part of the extension but running in context of the web page, so called proxy between page and background scripts  |
+| Background script  | Logic of the extension, **could not** communicate with page script, what is my purpose  |
