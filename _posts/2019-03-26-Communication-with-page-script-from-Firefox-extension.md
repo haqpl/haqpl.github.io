@@ -1,6 +1,7 @@
 ---
 title: Communication between page script and Firefox extension
 published: true
+author: Maciej Piechota
 ---
 ---
 
