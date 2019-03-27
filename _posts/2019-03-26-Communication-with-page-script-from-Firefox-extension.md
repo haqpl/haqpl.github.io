@@ -33,7 +33,7 @@ I've found plenty of Stackoverflow drips but it were to complicated for my probl
 
 Extensions are HTML and JavaScript code running along the browser. Is has XPI extension which is normall **ZIP** archive so we can edit it easly.
 
-!![](https://mdn.mozillademos.org/files/13669/webextension-anatomy.png =100x20)
+![](https://mdn.mozillademos.org/files/13669/webextension-anatomy.png =100x20)
 
 There are three different types of JavaScript code when talking about extensions:
 
