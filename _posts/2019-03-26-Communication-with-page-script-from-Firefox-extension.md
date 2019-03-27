@@ -83,7 +83,7 @@ I know that JavaScript allow us to send **events** to HTML tags and saw that Sel
 
 ### Custom events:
 
-We have a function called msgKnoxxs which is responsible for showing notifications each time Knoxss has done it's job. I added two-lines of code which should fire an custom event on HTML object called `document.body`:
+We have a function called msgKnoxxs in add-ons _background script_ which is responsible for showing notifications each time Knoxss has done it's job. I added two-lines of code which should fire an custom event on HTML object called `document.body`. If you readed carefully you should know we are injecting code as _content script_:
 
 ```javascript
 function msgKnoxss(text) {
@@ -100,7 +100,7 @@ function msgKnoxss(text) {
    });
 }
 ```
-Now we have to receive that information on the other side in Python using Selenium's `execute_script` function. Lets assume we have a Webdriver object and loaded a web page using it:
+Now we have to receive that information on the other side in Python using Selenium's `execute_script` function, which inject our code in _page script_. Lets assume we have a Webdriver object and loaded a web page using it:
 
 ```python
 driver.execute_script("document.body.addEventListener(\"knoxss_status\", function(e){window.knoxss_status = e.detail}, false);")
@@ -113,6 +113,11 @@ driver.execute_script("document.body.addEventListener(\"knoxss_status\", functio
                 print("Waiting for Knoxss event: {}".format(str(text)))
                 time.sleep(0.5)
 ```
-JavaScript events are _asynchronous_ that's why we have to save the value with details of custom event in window handler and try to read it in loop.
+JavaScript events are _asynchronous_ that's why we have to save the value with details of custom event in window handler and try to read it in a loop.
+
+### Summary
+
+It might look trivial to experienced JavaScript programmer but for me it took a lot of trials and errors. From the security point of view modyfing extensions is not what should be done because _content scripts_ has access to all the web pages we browse. Moreover, we added critical function similar to `eval` thats why all the arguments should be escaped.
+
 
 
