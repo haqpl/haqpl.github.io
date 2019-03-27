@@ -43,7 +43,7 @@ As mentioned [here](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/Web
 
 Everything looks great in first sight, but lets look on the code:
 
-```
+```javascript
 // content-script.js
 
 window.addEventListener("click", notifyExtension);
@@ -56,7 +56,7 @@ function notifyExtension(e) {
 }
 ```
 
-```
+```javascript
 // background-script.js
 
 browser.runtime.onMessage.addListener(notify);
