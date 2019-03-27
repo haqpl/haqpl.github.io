@@ -77,7 +77,7 @@ function notify(message) {
   });
 }
 ```
-This would be helpful if we want to send a message from Content script and receive it in Background script - wrong direction. Second described operations would do it for us, but it looked too complicated for me.
+This would be helpful if we want to send a message from _content script_ and receive it in _background script_ - wrong direction. Second described operations would do it for us, but it looked too complicated for me.
 
 I know that JavaScript allows us to send **events** to HTML tags and saw that Selenium allows to catch those events, so let's look closer to that mechanism.
 
