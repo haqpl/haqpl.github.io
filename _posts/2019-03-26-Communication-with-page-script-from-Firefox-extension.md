@@ -71,4 +71,6 @@ function notify(message) {
   });
 }
 ```
+This would be helpful if we want to send a message from Content script and receive it in Background script, but I need to do something opposite. Second described operations would do it for us, but it looked to complicated for me.
 
+I know that JavaScript allow us to send events to HTML tags and saw that Selenium allows to catch those events, so lets look closer to that mechanism.
