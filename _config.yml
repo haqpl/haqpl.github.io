@@ -30,5 +30,5 @@ plugins:
   - jekyll-sitemap
 
 # Custom variables
-owner : "haqpl"
+owner : "Maciej Piechota"
 year : "2019"
