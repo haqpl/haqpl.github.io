@@ -2,6 +2,11 @@
 title: Communication with page script from Firefox extension
 published: true
 ---
+# [](#header-1)The problem
+
+Few days ago I wrote a tool which automates Knoxss extension. In the beginning my tool was not able to communicate with extension so I couldn't read its status and so on. The problem was I couldn't find a solution how to make it and I'm not a Javascript programmer :)
+
+
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
@@ -11,7 +16,7 @@ There should be whitespace between paragraphs.
 
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
-# [](#header-1)Header 1
+
 
 This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 
