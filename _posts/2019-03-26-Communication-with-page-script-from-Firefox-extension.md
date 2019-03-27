@@ -1,5 +1,5 @@
 ---
-title: Yet Another Sample Page
+title: Communication with page script from Firefox extension
 published: true
 ---
 
