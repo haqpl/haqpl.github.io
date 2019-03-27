@@ -83,7 +83,7 @@ I know that JavaScript allow us to send **events** to HTML tags and saw that Sel
 
 ### Custom events:
 
-We have a function called msgKnoxxs which is responsible of showing notifications each time Knoxss has done it's job. I added one-line of code which should fire an custom event on HTML object called `document.body`:
+We have a function called msgKnoxxs which is responsible for showing notifications each time Knoxss has done it's job. I added two-lines of code which should fire an custom event on HTML object called `document.body`:
 
 ```javascript
 function msgKnoxss(text) {
@@ -100,5 +100,19 @@ function msgKnoxss(text) {
    });
 }
 ```
+Now we have to receive that information on the other side in Python using Selenium's execute_script function:
 
+```python
+driver.execute_script("document.body.addEventListener(\"knoxss_status\", function(e){window.knoxss_status = e.detail}, false);")
+        while True:
+            text = driver.execute_script("return window.knoxss_status")
+            if text is not None:
+                print('Got Knoxss event: {}'.format(text))
+                break
+            else:
+                print("Waiting for Knoxss event: {}".format(str(text)))
+                time.sleep(0.5)
 ```
+JavaScript events are _asynchronous_ that's why we have to save value with details of custom event in window handler and try to read it in loop.
+
+
