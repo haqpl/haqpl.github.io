@@ -31,7 +31,7 @@ I've found plenty of Stackoverflow drips but it were to complicated for my probl
 
 ### Some theory about extensions:
 
-Extensions are HTML and JavaScript code running along the browser. Is has XPI extension which is normall **ZIP** archive so we can edit it files easily. Let's look on contents of the _manifest.json_ file:
+Extensions are HTML and JavaScript code running among the browser. It has XPI extension and are normall **ZIP** archives so we can edit it files easily. Let's look on contents of the _manifest.json_ file:
 
 ![manifest.json](https://mdn.mozillademos.org/files/13669/webextension-anatomy.png){:height="500px" style="display: block; margin: 0 auto"}
 
@@ -77,7 +77,7 @@ function notify(message) {
   });
 }
 ```
-This would be helpful if we want to send a message from Content script and receive it in Background script, but I need to do something opposite. Second described operations would do it for us, but it looked too complicated for me.
+This would be helpful if we want to send a message from Content script and receive it in Background script - wrong direction. Second described operations would do it for us, but it looked too complicated for me.
 
 I know that JavaScript allow us to send **events** to HTML tags and saw that Selenium allows to catch those events, so lets look closer to that mechanism.
 
@@ -100,7 +100,7 @@ function msgKnoxss(text) {
    });
 }
 ```
-Now we have to receive that information on the other side in Python using Selenium's execute_script function:
+Now we have to receive that information on the other side in Python using Selenium's `execute_script` function. Lets assume we have a Webdriver object and loaded a web page using it:
 
 ```python
 driver.execute_script("document.body.addEventListener(\"knoxss_status\", function(e){window.knoxss_status = e.detail}, false);")
@@ -113,6 +113,6 @@ driver.execute_script("document.body.addEventListener(\"knoxss_status\", functio
                 print("Waiting for Knoxss event: {}".format(str(text)))
                 time.sleep(0.5)
 ```
-JavaScript events are _asynchronous_ that's why we have to save value with details of custom event in window handler and try to read it in loop.
+JavaScript events are _asynchronous_ that's why we have to save the value with details of custom event in window handler and try to read it in loop.
 
 
