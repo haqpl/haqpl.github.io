@@ -20,7 +20,8 @@ Few days ago I wrote a [tool](automation-of-knoxss-extension) which automates Kn
 I've found plenty of Stackoverflow drips but it were to complicated for my problem or described communication in the opposite direction. 
 
 1. [Communication between HTML and your extension](https://developer.mozilla.org/en-US/docs/Archive/Add-ons/Communication_between_HTML_and_your_extension) - described usage of custom events which gave me an idea of trying it
-2. [Can my webdriver script catch a event from the webpage](https://stackoverflow.com/questions/35884230/can-my-webdriver-script-catch-a-event-from-the-webpage) - catching JavaScript events by Selenium Webdriver
+2. [Communicating with background scripts](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#Communicating_with_background_scripts)
+3. [Can my webdriver script catch a event from the webpage](https://stackoverflow.com/questions/35884230/can-my-webdriver-script-catch-a-event-from-the-webpage) - catching JavaScript events by Selenium Webdriver
 
 
 ### What I tried:
@@ -35,8 +36,8 @@ There are three different types of JavaScript code when talking about extensions
 | Name  | Properties |
 | ------------- | ------------- |
 | Page script  | Code running in context of the web page. I **can** inject code here using Selenium|
-| Content script  | Part of the extension but running in context of the web page.   |
-| Background script  | Logic of the extension, **could not** communicate with page script - my purpose  |
+| Content script  | Part of the extension but running in context of the web page. So-called **proxy**     |
+| Background script  | Logic of the extension, **could not** communicate with page script directly - my purpose - but can inject code as content script |
 
 As mentioned [here](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#Communicating_with_background_scripts):
 > There are two basic patterns for communicating between the background scripts and content scripts: you can send one-off messages, with an optional response, or you can set up a longer-lived connection between the two sides, and use that connection to exchange messages.
