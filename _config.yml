@@ -6,6 +6,7 @@ author:
   url: "https://haqpl.github.io"
 
 baseurl: /
+disqus: haqpl-blog
 
 source: .
 destination: ./_site
