@@ -40,12 +40,14 @@ Extensions are HTML and JavaScript code running among the browser. File has XPI 
 Add-ons have its own permission system describing how much we can interfere with web pages. We need permission called `"activeTab"`, which was set already by the author.
 
 There are three different types of JavaScript code when talking about extensions:
+</br>
 
 | Name  | Properties |
 | ------------- | ------------- |
 | Page script  | Code running in the context of the web page. I **can** inject code here using Selenium|
 | Content script  | Part of the extension but running in the context of the web page. So-called **proxy**     |
 | Background script  | Logic of the extension, **could not** communicate with page script directly - my purpose - but can inject code as content script |
+</br>
 
 As mentioned [here](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#Communicating_with_background_scripts):
 > There are two basic patterns for communicating between the background scripts and content scripts: you can send one-off messages, with an optional response, or you can set up a longer-lived connection between the two sides, and use that connection to exchange messages.
