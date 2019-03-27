@@ -35,7 +35,7 @@ I've found plenty of Stackoverflow drips but it was too complicated for my probl
 
 Extensions are HTML and JavaScript code running among the browser. File has XPI extension and is normall **ZIP** archive so we can edit it easily. Let's look on contents of the _manifest.json_ file:
 
-{% include figure.html file="/assets/webextension-anatomy.png" alt="/assets/webextension-anatomy.png" max-width="670px" number="1" caption="Web extension anatomy - https://mdn.mozillademos.org/files/13669/webextension-anatomy.png" %}
+{% include figure.html file="/assets/webextension-anatomy.png" alt="/assets/webextension-anatomy.png" max-width="500px" number="1" caption="https://mdn.mozillademos.org/files/13669/webextension-anatomy.png" %}
 
 ![manifest.json](https://mdn.mozillademos.org/files/13669/webextension-anatomy.png){:height="500px" style="display: block; margin: 0 auto"} "https://mdn.mozillademos.org/files/13669/webextension-anatomy.png"
 
