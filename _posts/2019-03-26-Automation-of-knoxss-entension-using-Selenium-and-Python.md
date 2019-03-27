@@ -30,6 +30,6 @@ As we can read on the [knoxss.me](https://knoxss.me) page:
 
 ### Credits:
 
-@rodoassis
-@razorjack
+[@rodoassis](https://twitter.com/rodoassis)
+[@razorjack](https://razorjack.net)
 
