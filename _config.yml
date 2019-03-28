@@ -28,6 +28,12 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/haqpl.png
 
 social:
   links:
