@@ -23,7 +23,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      image: /assets/haqpl.jpg
+      image: /assets/haqpl.png
 
 future: true
 plugins:
