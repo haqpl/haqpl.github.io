@@ -4,8 +4,8 @@ published: true
 author: Maciej Piechota
 ---
 
-I'm not a programmer but I like to automate some boring stuff I do every day using Python. That's why I decided to write a few lines of code and give life to semi-automatic XSS scanner of my choice which is Knoxss.
-Knoxss comes to you as an extension. The author recommends using Gecko based browsers so I chose Firefox in developer edition because it allows you to load extensions using Web driver - Selenium.
+I'm not a programmer but I like to automate some boring stuff I do every day using Python. That's why I decided to write a few lines of code and give life to semi-automatic XSS scanner of my choice which is KNOXSS.
+KNOXSS comes to you as an extension. The author recommends using Gecko based browsers so I chose Firefox in developer edition because it allows you to load extensions using Web driver - Selenium.
 
 ## The problem:
 
@@ -22,10 +22,13 @@ Knoxss is a semi-automatic tool which means that you have to manually browse a s
 
 ## KNOXSS specification:
 
-Author of this extensions recommends using Gecko based browser so obvious choice would be Firefox. 
 As we can read on the [knoxss.me](https://knoxss.me) page:
 
 >it supports source and DOM based reflected XSS, although by chance a stored or a more complex DOM-based case may arise if there's also a reflection in response. Except for demo plan (below), it also drops (in certain cases) a XSS payload designed to send an email report to KNOXSS user with info about the environment where it was triggered (in scenarios where such vulnerability exists) hence also being able to find blind and stored XSS cases in this way.
+
+## What I found:
+
+* [Firefox extensions with selenium](https://intoli.com/blog/firefox-extensions-with-selenium/) - I started with this blog post, which gave me an idea how to load an Firerfox extension using Selenium
 
 
 ## Credits:
