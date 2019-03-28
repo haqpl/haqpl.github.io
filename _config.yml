@@ -29,6 +29,14 @@ defaults:
       layout: "post"
       image: /assets/haqpl.png
 
+social:
+  name: Ben Balter
+  links:
+    - https://twitter.com/haqpl
+    - https://www.linkedin.com/in/0x31337
+    - https://github.com/haqpl
+
+
 future: true
 plugins:
   - jekyll-seo-tag
@@ -39,4 +47,4 @@ plugins:
 # Custom variables
 owner : "Maciej Piechota"
 year : "2019"
-image: /assets/haqpl.png
+
