@@ -123,7 +123,7 @@ JavaScript events are _asynchronous_ that's why we have to save the value with d
 
 ## Summary
 
-It might look trivial to experienced JavaScript programmer but for me, it took a lot of trials and errors. From the security point of view, modifying extensions is not what should be done because _content scripts_ has access to all the web pages we browse. Moreover, we added a critical function similar to `eval` that's why all the arguments should be escaped. Personally, I don't like JavaScript. What I said wasn't unwarranted - there is no function to securely escape strings.
+It might look trivial to experienced JavaScript programmer but for me, it took a lot of trials and errors. From the security point of view, modifying extensions is not what should be done because _content scripts_ has access to all the web pages we browse. Moreover, we added a critical function similar to `eval` that's why all the arguments should be escaped. Personally, I don’t like JavaScript. Its standard library is so poor that even simple things like string escaping need to be implemented as a custom function.
 
 
 
