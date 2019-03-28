@@ -4,6 +4,7 @@ author:
   name: "Maciej Piechota"
   email: "piechotamaciej@gmail.com"
   url: "https://haqpl.github.io"
+  twitter: haqpl
 
 baseurl: /
 disqus: haqpl-blog
@@ -22,6 +23,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      image: /assets/haqpl.jpg
 
 future: true
 plugins:
