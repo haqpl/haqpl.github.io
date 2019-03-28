@@ -5,6 +5,10 @@ author:
   email: "piechotamaciej@gmail.com"
   url: "https://haqpl.github.io"
   twitter: haqpl
+  
+twitter:
+  username: haqpl
+  card: summary
 
 baseurl: /
 disqus: haqpl-blog
