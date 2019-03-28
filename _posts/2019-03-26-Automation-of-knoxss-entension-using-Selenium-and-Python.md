@@ -29,6 +29,15 @@ As we can read on the [knoxss.me](https://knoxss.me) page:
 ## What I found:
 
 * [Firefox extensions with selenium](https://intoli.com/blog/firefox-extensions-with-selenium/) - I started with this blog post, which gave me an idea how to load an Firerfox extension using Selenium
+* [Creating profile with Firefox and Selenium](http://witkowskibartosz.com/blog/selenium-firefox-profile-for-automation.html) - describes how to setup a profile with Firefox needed when installing an add-on
+
+## Preparing:
+
+1. Download geckodriver - [Geckodriver release](https://github.com/mozilla/geckodriver/releases)
+2. Download Firefox Developer Edition - [Firefox Developer Edition](https://www.mozilla.org/pl/firefox/developer/)
+3. Install latest Selenium in your Python environment - `pip install selenium --user`
+4. Download KNOXSS Pro Add-on - [KNOXSS](https://knoxss.me/)
+5. Run `python knoxss_automation.py -u URL -c COOKIES`
 
 
 ## Credits:
