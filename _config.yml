@@ -1,5 +1,6 @@
 title: Maciej Piechota cuisine
 description: "About security, penetration testing, python"
+image: /assets/haqpl.png
 author:
   name: "Maciej Piechota"
   email: "piechotamaciej@gmail.com"
@@ -27,7 +28,6 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      image: /assets/haqpl.png
 
 social:
   name: Ben Balter
