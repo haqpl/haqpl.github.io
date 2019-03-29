@@ -1,6 +1,6 @@
 ---
 title: Automation of KNOXSS extension using Selenium and Python
-published: true
+published: false
 author: Maciej Piechota
 ---
 
@@ -38,6 +38,9 @@ As we can read on the [knoxss.me](https://knoxss.me) page:
 3. Install latest Selenium in your Python environment - `pip install selenium --user`
 4. Download KNOXSS Pro Add-on - [KNOXSS](https://knoxss.me/)
 5. Run `python knoxss_automation.py -u URL -c COOKIES`
+
+## What I did:
+
 
 
 ## Credits:
