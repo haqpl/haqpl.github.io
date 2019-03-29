@@ -48,6 +48,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-twitter-plugin
+  - jekyll-mentions
 
 # Custom variables
 owner : "Maciej Piechota"
