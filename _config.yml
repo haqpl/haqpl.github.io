@@ -49,7 +49,10 @@ plugins:
   - jekyll-sitemap
   - jekyll-twitter-plugin
   - jekyll-mentions
-
+  
+jekyll-mentions:
+  base_url: https://twitter.com
+  
 # Custom variables
 owner : "Maciej Piechota"
 year : "2019"
