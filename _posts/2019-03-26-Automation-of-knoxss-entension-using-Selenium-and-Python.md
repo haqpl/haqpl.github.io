@@ -4,7 +4,7 @@ published: true
 author: Maciej Piechota
 ---
 
-I like to automate some boring stuff I do every day using Python. That's why I decided to write a few lines of code and give life to semi-automatic XSS scanner of my choice which is KNOXSS.
+I like to automate some boring stuff I do every day using Python. That's why I decided to write a few lines of code and give a life to semi-automatic XSS scanner of my choice which is KNOXSS.
 KNOXSS comes to you as an extension. The author recommends using Gecko based browsers so I chose Firefox in developer edition because it allows you to load extensions using Web driver - Selenium.
 
 ## The problem:
