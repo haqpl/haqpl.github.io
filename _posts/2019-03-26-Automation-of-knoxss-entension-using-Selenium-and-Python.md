@@ -41,7 +41,9 @@ As we can read on the [knoxss.me](https://knoxss.me) page:
 
 ## What I did:
 
+Like I wrote in my previous post: (Communication with page script from Firefox extension)[Communication-with-page-script-from-Firefox-extension]. I added firing custom event in the extension and listen for them in Selenium. I learned using events in JavaScript and using Selenium, its good so far :)
 
+There is a problem with synchronization visited pages and extension status because of the nature of the Internet but I will sole it in next releases of my tool. I hope :)
 
 ## Credits:
 
