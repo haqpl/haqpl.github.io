@@ -41,9 +41,14 @@ As we can read on the [knoxss.me](https://knoxss.me) page:
 
 ## What I did:
 
-Like I wrote in my previous post: (Communication with page script from Firefox extension)[Communication-with-page-script-from-Firefox-extension]. I added firing custom event in the extension and listen for them in Selenium. I learned using events in JavaScript and using Selenium, its good so far :)
+Like I wrote in my previous post: (Communication with page script from Firefox extension)[Communication-with-page-script-from-Firefox-extension]. I added firing custom event in the extension and listen for them in Selenium. I learned using events in JavaScript and using Selenium, so far so good:)
 
-There is a problem with synchronization visited pages and extension status because of the nature of the Internet but I will sole it in next releases of my tool. I hope :)
+
+## TODO:
+
+1. There is a problem with synchronization visited pages and extension status because of the nature of the Internet but I will sole it in next releases of my tool. I hope :)
+2. Resume functionality - saving the state of a scan to the file and loading it on request.
+3. Summary of scanning results. For now I recommend to use tool with `script` command to save the results or watch the browser from time to time :)
 
 ## Credits:
 
