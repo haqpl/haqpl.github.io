@@ -74,6 +74,7 @@ The tool supports the basic method of navigating and scraping links each visited
 1. There is a problem with synchronization visited pages and extension status because of the nature of the Internet but I will solve it in the next releases of my tool. I hope :)
 2. Resume functionality - saving the state of a scan to the file and loading it on request.
 3. Summary of scanning results. For now, I recommend to use tool with `script` command to save the results or watch the browser from time to time :)
+4. Threading for navigating simultaneously in several browsers
 
 ## Credits:
 
