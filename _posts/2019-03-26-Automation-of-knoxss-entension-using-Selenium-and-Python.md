@@ -9,7 +9,7 @@ KNOXSS comes to you as an extension. The author recommends using Gecko based bro
 
 ## The problem:
 
-Knoxss is a semi-automatic tool which means that you have to manually browse a site you want to scan it for XSS vulnerabilities. The add-on deserves automation on its own.
+Knoxss is a semi-automatic tool which means that you have to manually browse a site you want to scan it for XSS vulnerabilities. I think the add-on deserves automation on its own.
 
 ## Toolbelt:
 
@@ -33,10 +33,10 @@ As we can read on the [knoxss.me](https://knoxss.me) page:
 
 ## Preparing:
 
-1. Download geckodriver - [Geckodriver release](https://github.com/mozilla/geckodriver/releases)
+1. Download geckodriver - [Geckodriver release](https://github.com/mozilla/geckodriver/releases) - it should be placed in `/usr/bin/`
 2. Download Firefox Developer Edition - [Firefox Developer Edition](https://www.mozilla.org/pl/firefox/developer/)
 3. Install latest Selenium in your Python environment - `pip install selenium --user`
-4. Download KNOXSS Pro Add-on - [KNOXSS](https://knoxss.me/) and unzip the XPI file.
+4. Download KNOXSS Pro add-on - [KNOXSS](https://knoxss.me/) and unzip the XPI file.
 a) Locate the background script `index.js` and edit msgKnoxss function, it should look like that below:
 
 ```javascript
@@ -65,7 +65,7 @@ The tool supports the basic method of navigating and scraping links each visited
 `python automate_knoxss.py -u "http://target" -c cookies.pkl -f /usr/bin/firefox -a knoxss`
 
 1. `-u` or `--url` - defines the target for the scan
-2. `-c` or `--cookies` - defines the pickle file with session Cookies for logged in user to KNOXSS service
+2. `-c` or `--cookies` - defines the session Cookies for logged in user to KNOXSS service
 3. `-f` or `--firefox` - defines the location of Firefox Developer edition binary
 4. `-a` or `--addon` - defines the location of KNOXSS extension directory, unzipped and modified
 
