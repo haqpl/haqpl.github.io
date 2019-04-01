@@ -36,8 +36,8 @@ As we can read on the [knoxss.me](https://knoxss.me) page:
 1. Download geckodriver - [Geckodriver release](https://github.com/mozilla/geckodriver/releases) - it should be placed in `/usr/bin/`
 2. Download Firefox Developer Edition - [Firefox Developer Edition](https://www.mozilla.org/pl/firefox/developer/)
 3. Install latest Selenium in your Python environment - `pip install selenium --user`
-4. Download KNOXSS Pro add-on - [KNOXSS](https://knoxss.me/) and unzip the XPI file.
-a) Locate the background script `index.js` and edit msgKnoxss function, it should look like that below:
+4. Login to the KNOXSS service and get your Cookies, it has to be passed in CLI.
+5. Download KNOXSS Pro add-on - [KNOXSS](https://knoxss.me/) and unzip the XPI file. Locate the background script `index.js` and edit msgKnoxss function, it should look like that below:
 
 ```javascript
 function msgKnoxss(text) {
