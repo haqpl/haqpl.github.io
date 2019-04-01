@@ -1,6 +1,6 @@
 ---
 title: Automation of KNOXSS extension using Selenium and Python
-published: false
+published: true
 author: Maciej Piechota
 ---
 
