@@ -4,7 +4,7 @@ published: false
 author: Maciej Piechota
 ---
 
-I like to automate some boring stuff I do every day using Python. That's why I decided to write a few lines of code and give a life to semi-automatic XSS scanner of my choice which is KNOXSS.
+I like to automate some boring stuff I do every day using Python. That's why I decided to write a few lines of code and give life to semi-automatic XSS scanner of my choice which is KNOXSS.
 KNOXSS comes to you as an extension. The author recommends using Gecko based browsers so I chose Firefox in developer edition because it allows you to load extensions using Web driver - Selenium.
 
 ## The problem:
@@ -28,8 +28,8 @@ As we can read on the [knoxss.me](https://knoxss.me) page:
 
 ## What I found:
 
-* [Firefox extensions with selenium](https://intoli.com/blog/firefox-extensions-with-selenium/) - I started with this blog post, which gave me an idea how to load an Firerfox extension using Selenium
-* [Creating profile with Firefox and Selenium](http://witkowskibartosz.com/blog/selenium-firefox-profile-for-automation.html) - describes how to setup a profile with Firefox needed when installing an add-on
+* [Firefox extensions with selenium](https://intoli.com/blog/firefox-extensions-with-selenium/) -  I started with this blog post, which gave me an idea of how to load a Firefox extension using Selenium
+* [Creating profile with Firefox and Selenium](http://witkowskibartosz.com/blog/selenium-firefox-profile-for-automation.html) - describes how to set up a profile with Firefox needed when installing an add-on
 
 ## Preparing:
 
@@ -37,29 +37,43 @@ As we can read on the [knoxss.me](https://knoxss.me) page:
 2. Download Firefox Developer Edition - [Firefox Developer Edition](https://www.mozilla.org/pl/firefox/developer/)
 3. Install latest Selenium in your Python environment - `pip install selenium --user`
 4. Download KNOXSS Pro Add-on - [KNOXSS](https://knoxss.me/) and unzip the XPI file.
-a) Locate the `index.js` file and edit
-5. Run `python knoxss_automation.py -u URL -c COOKIES`
+a) Locate the background script `index.js` and edit msgKnoxss function, it should look like that below:
+
+```javascript
+function msgKnoxss(text) {
+   text = text.replace(/(\r\n|\n|\r)/gm, " ");
+   browser.tabs.executeScript(null, { code: "var myEvent = new CustomEvent('knoxss_status',{'detail': '"+text+"'}); document.dispatchEvent(myEvent); myEvent.preventDefault();"});
+   
+   browser.notifications.create({
+     "type": "basic",
+     "iconUrl": browser.extension.getURL("icons/k.png"),
+     "title": "KNOXSS Msg Service",
+     "message": text
+   });
+}
+```
+5. Run `python knoxss_automation.py -u URL -c COOKIES -f FIREFOX_BINARY -a MODIFIED_KNOXX_DIR`
 
 ## What I did:
 
 Like I wrote in my previous post: (Communication with page script from Firefox extension)[Communication-with-page-script-from-Firefox-extension]. 
 
-The tool supports the basic method of navigating and scraping links each web page starting from that passed in argument. It compares each found link to the visited ones, looking for proper extensions and checks whether the domain is suitable. It communicates with KNOXSS add-on using JavaScript custom events, that method might be useful for automation testers.
+The tool supports the basic method of navigating and scraping links each visited web page starting from that passed in argument. It compares each found link to the visited ones, looking for proper extensions and checks whether the domain is suitable. It communicates with KNOXSS add-on using JavaScript custom events, that method might be useful for automation testers.
 
 ## Parameters:
 
 `python automate_knoxss.py -u "http://target" -c cookies.pkl -f /usr/bin/firefox -a knoxss`
 
-1. `-u` or `--url` defines the target for the scan
-2. `-c` or `--cookies` defines the pickle file with session Cookies for logged in user to KNOXSS service
-3. `-f` or `--firefox` defines the location of Firefox Developer edition binary
-4. `-a` or `--addon`defines the location of KNOXSS extension directory, unzipped and modified
+1. `-u` or `--url` - defines the target for the scan
+2. `-c` or `--cookies` - defines the pickle file with session Cookies for logged in user to KNOXSS service
+3. `-f` or `--firefox` - defines the location of Firefox Developer edition binary
+4. `-a` or `--addon` - defines the location of KNOXSS extension directory, unzipped and modified
 
 ## TODO:
 
-1. There is a problem with synchronization visited pages and extension status because of the nature of the Internet but I will sole it in next releases of my tool. I hope :)
+1. There is a problem with synchronization visited pages and extension status because of the nature of the Internet but I will solve it in the next releases of my tool. I hope :)
 2. Resume functionality - saving the state of a scan to the file and loading it on request.
-3. Summary of scanning results. For now I recommend to use tool with `script` command to save the results or watch the browser from time to time :)
+3. Summary of scanning results. For now, I recommend to use tool with `script` command to save the results or watch the browser from time to time :)
 
 ## Credits:
 
