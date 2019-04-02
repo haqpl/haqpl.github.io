@@ -7,4 +7,4 @@ I’m a security ninja and technology polyglot, pug lover and drum’n’bass he
 
 > Conquer the world is my "motto" :)
 
-Currently based in Lodz, Poland. 
+Currently based in Lodz, Poland. Looking for remote job opportunities!
