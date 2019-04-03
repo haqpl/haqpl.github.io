@@ -7,7 +7,18 @@
     <span>© {{ currentyear }}</span>
   </a>
   <br>
+  <div class="container">     
+        <div class="footer-icon">
+            <a class="btn btn-default" href="https://twitter.com/haqpl" aria-label="Twitter"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+        </div>        
+        <div class="footer-icon">
+            <a class="btn btn-default" href="https://github.com/haqpl" aria-label="Github"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+        </div>
+        <div class="footer-icon">
+            <a class="btn btn-default" href="https://linkedin.com/in/0x31337" aria-label="LinkedIn"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+        </div>
+</div>
+  {% if site.hacker %}
     <span><a href="https://twitter.com/haqpl?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @haqpl</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br>
-      {% if site.hacker %}
       <div class="badge" style="display: inline-block"><script src="https://www.hackthebox.eu/badge/76469"></script></div> {% endif %}</span>
 </footer>
