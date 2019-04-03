@@ -4,8 +4,8 @@ published: true
 author: Maciej Piechota
 ---
 
-I like to automate some boring stuff I do every day using Python. That's why I decided to write a few lines of code and give life to semi-automatic XSS scanner of my choice which is KNOXSS.
-KNOXSS comes to you as an extension. The author recommends using Gecko based browsers so I chose Firefox in developer edition because it allows you to load extensions using Web driver - Selenium. Please notice that I'm not software architect :) My job was to make it work and solve the problem, if you have any ideas how to improve code or add any functionalites, please let me know in comments.
+I like to automate some boring stuff I do every day using Python. That's why I decided to write a few lines of code and give life to a semi-automatic XSS scanner of my choice which is KNOXSS.
+KNOXSS comes to you as an extension. The author recommends using Gecko based browsers so I chose Firefox in developer edition because it allows you to load extensions using a Web driver  - Selenium. Please notice that I'm not a software architect :) My job was to make it work and solve the problem, if you have any ideas how to improve the code or add any functionalites, please let me know in comments.
 
 ## The problem:
 
@@ -58,7 +58,7 @@ function msgKnoxss(text) {
 
 Like I wrote in my previous post: (Communication with page script from Firefox extension)[Communication-with-page-script-from-Firefox-extension]. 
 
-The tool supports the basic method of navigating and scraping links each visited web page starting from that passed in argument. It compares each found link to the visited ones, looking for proper extensions and checks whether the domain is suitable. It communicates with KNOXSS add-on using JavaScript custom events, that method might be useful for automation testers.
+The tool supports the basic method of navigating and scraping links of each visited web page starting from that passed in the argument. It compares each found link to the visited ones, looking for proper extensions and checks whether the domain is suitable. It communicates with KNOXSS add-on using JavaScript custom events, that method might be useful for automation testers.
 
 ## Parameters:
 
