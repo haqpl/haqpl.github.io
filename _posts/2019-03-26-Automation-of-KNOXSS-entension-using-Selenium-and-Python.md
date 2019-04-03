@@ -78,7 +78,7 @@ The tool supports the basic method of navigating and scraping links of each visi
 
 ## Repository:
 
-(https://github.com/haqpl/automate_knoxss)[https://github.com/haqpl/automate_knoxss]
+[https://github.com/haqpl/automate_knoxss](https://github.com/haqpl/automate_knoxss)
 
 ## Credits:
 
