@@ -68,6 +68,7 @@ The tool supports the basic method of navigating and scraping links of each visi
 2. `-c` or `--cookies` - defines the session Cookies for logged in user to KNOXSS service
 3. `-f` or `--firefox` - defines the location of Firefox Developer edition binary
 4. `-a` or `--addon` - defines the location of KNOXSS extension directory, unzipped and modified
+5. `-t` or `--timeout` - defines the timout for event
 
 ## TODO:
 
