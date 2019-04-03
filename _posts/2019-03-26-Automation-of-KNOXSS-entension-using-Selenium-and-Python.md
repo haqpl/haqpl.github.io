@@ -56,7 +56,7 @@ function msgKnoxss(text) {
 
 ## What I did:
 
-Like I wrote in my previous post: (Communication between Selenium, page script and Firefox extension.md)[Communication-between-Selenium-page-script-and-Firefox-extension]. 
+Like I wrote in my previous post: [Communication between Selenium, page script and Firefox extension](Communication-between-Selenium-page-script-and-Firefox-extension). 
 
 The tool supports the basic method of navigating and scraping links of each visited web page starting from that passed in the argument. It compares each found link to the visited ones, looking for proper extensions and checks whether the domain is suitable. It communicates with KNOXSS add-on using JavaScript custom events, that method might be useful for automation testers.
 
