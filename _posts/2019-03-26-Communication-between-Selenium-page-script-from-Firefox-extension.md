@@ -1,5 +1,5 @@
 ---
-title: Communication between page script and Firefox extension
+title: Communication between Selenium, page script and Firefox extension
 published: true
 author: Maciej Piechota
 ---
