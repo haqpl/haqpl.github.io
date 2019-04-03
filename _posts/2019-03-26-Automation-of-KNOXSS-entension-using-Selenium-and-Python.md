@@ -52,7 +52,7 @@ function msgKnoxss(text) {
    });
 }
 ```
-5. Run `python knoxss_automation.py -u URL -c COOKIES -f FIREFOX_BINARY -a MODIFIED_KNOXX_DIR`
+5. Run `python automate_knoxss.py -u target_url -c cookies_string -f firefox_binary -a modified_knoxss_dir -t timeout`
 
 ## What I did:
 
