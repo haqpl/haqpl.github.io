@@ -117,7 +117,7 @@ driver.execute_script("document.body.addEventListener(\"knoxss_status\", functio
             print('Got KNOXSS event: {}'.format(text))
             break
         else:
-            print("Waiting for Knoxss event: {}".format(str(text)))
+            print("Waiting for KNOXSS event: {}".format(str(text)))
             time.sleep(0.5)
 ```
 JavaScript events are _asynchronous_, that's why we have to save the value with details of custom event in window handler and try to read it in a loop.
