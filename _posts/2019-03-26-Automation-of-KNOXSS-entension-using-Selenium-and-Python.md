@@ -76,6 +76,10 @@ The tool supports the basic method of navigating and scraping links of each visi
 3. Summary of scanning results. For now, I recommend to use tool with `script` command to save the results or watch the browser from time to time :)
 4. Threading for navigating simultaneously in several browsers
 
+## Repository:
+
+(https://github.com/haqpl/automate_knoxss)[https://github.com/haqpl/automate_knoxss]
+
 ## Credits:
 
 @rodoassis
