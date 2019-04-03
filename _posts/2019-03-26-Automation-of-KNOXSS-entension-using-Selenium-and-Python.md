@@ -62,7 +62,7 @@ The tool supports the basic method of navigating and scraping links of each visi
 
 ## Parameters:
 
-`python automate_knoxss.py -u "http://target" -c cookies.pkl -f /usr/bin/firefox -a knoxss`
+`python3 automate_knoxss.py -u "https://target" -c "wordpress_logged_in_...=...; wordpress_sec_...=...; sucuri_cloudproxy_uuid_...=...; wordpress_test_cookie=WP+Cookie+check;" -f /home/firefox/firefox -a knoxss -t 90`
 
 1. `-u` or `--url` - defines the target for the scan
 2. `-c` or `--cookies` - defines the session Cookies for logged in user to KNOXSS service
