@@ -113,7 +113,8 @@ driver.execute_script("document.body.addEventListener(\"knoxss_status\", functio
     while True:
         text = driver.execute_script("return window.knoxss_status")
         if text is not None:
-            print('Got Knoxss event: {}'.format(text))
+            driver.execute_script("window.knoxss_status = null")
+            print('Got KNOXSS event: {}'.format(text))
             break
         else:
             print("Waiting for Knoxss event: {}".format(str(text)))
