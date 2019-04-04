@@ -26,6 +26,10 @@ As we can read on the [knoxss.me](https://knoxss.me) page:
 
 >it supports source and DOM based reflected XSS, although by chance a stored or a more complex DOM-based case may arise if there's also a reflection in response. Except for demo plan (below), it also drops (in certain cases) a XSS payload designed to send an email report to KNOXSS user with info about the environment where it was triggered (in scenarios where such vulnerability exists) hence also being able to find blind and stored XSS cases in this way.
 
+## What is Selenium:
+
+Selenium automates browsers. It is widely used by automation testers but can be used in security as well. Someone can ask: I can do the same with wget/curl. But Selenium can render the whole page with JavaScript and CSS as every user will see, that is useful when talking about DOM-based XSS'es. Add to it a method for detecting JavaScript alerts, and you have a full dynamic scanner.
+
 ## What I found:
 
 * [Firefox extensions with selenium](https://intoli.com/blog/firefox-extensions-with-selenium/) -  I started with this blog post, which gave me an idea of how to load a Firefox extension using Selenium
