@@ -85,6 +85,8 @@ The tool supports the basic method of navigating and scraping links of each visi
 
 [https://github.com/haqpl/automate_knoxss](https://github.com/haqpl/automate_knoxss)
 
+Please be aware when using this tool the author of KNOXSS scanner will **ban** users who will abuse his service!
+
 ## Credits:
 
 @rodoassis
