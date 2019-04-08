@@ -3,5 +3,5 @@ layout: page
 title: Photography
 ---
 
-I like to take photos during walks. I will put a few here.
+{% include image-gallery.html folder="/assets/gallery" %}
 
