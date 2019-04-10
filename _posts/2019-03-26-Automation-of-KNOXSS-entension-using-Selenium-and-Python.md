@@ -58,12 +58,6 @@ function msgKnoxss(text) {
 ```
 5. Run `python automate_knoxss.py -u target_url -c cookies_string -f firefox_binary -a modified_knoxss_dir -t timeout`
 
-## What I did:
-
-Like I wrote in my previous post: [Communication between Selenium, page script and Firefox extension](Communication-between-Selenium-page-script-and-Firefox-extension). 
-
-The tool supports the basic method of navigating and scraping links of each visited web page starting from that passed in the argument. It compares each found link to the visited ones, looking for proper extensions and checks whether the domain is suitable. It communicates with KNOXSS add-on using JavaScript custom events, that method might be useful for automation testers.
-
 ## Parameters:
 
 `python3 automate_knoxss.py -u "https://target" -c "wordpress_logged_in_...=...; wordpress_sec_...=...; sucuri_cloudproxy_uuid_...=...; wordpress_test_cookie=WP+Cookie+check;" -f /home/firefox/firefox -a knoxss -t 90`
@@ -73,6 +67,12 @@ The tool supports the basic method of navigating and scraping links of each visi
 3. `-f` or `--firefox` - defines the location of Firefox Developer edition binary
 4. `-a` or `--addon` - defines the location of KNOXSS extension directory, unzipped and modified
 5. `-t` or `--timeout` - defines the timout for event
+
+## What I did:
+
+Like I wrote in my previous post: [Communication between Selenium, page script and Firefox extension](Communication-between-Selenium-page-script-and-Firefox-extension). 
+
+The tool supports the basic method of navigating and scraping links of each visited web page starting from that passed in the argument. It compares each found link to the visited ones, looking for proper extensions and checks whether the domain is suitable. It communicates with KNOXSS add-on using JavaScript custom events, that method might be useful for automation testers.
 
 ## TODO:
 
