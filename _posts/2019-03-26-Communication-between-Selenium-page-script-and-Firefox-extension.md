@@ -86,14 +86,14 @@ I know that JavaScript allows us to send **events** to HTML tags and saw that Se
 
 ## Custom events:
 
-We have a function called msgKnoxxs in add-ons _background script_ which is responsible for showing notifications each time KNOXSS has done its job. I added two lines of code which should fire a custom event on the HTML object called `document.body`. If you read carefully you should know we are injecting code as _content script_:
+We have a function called msgKnoxxs in add-ons _background script_ which is responsible for showing notifications each time KNOXSS has done its job. I added two lines of code which should fire a custom event on the DOM object called `document`, which is a standard object, available regardless of the contents of HTML. If you read carefully you should know we are injecting code as _content script_:
 
 ```javascript
 function msgKnoxss(text) {
    text = text.replace(/(\r\n|\n|\r)/gm, " ");
    
    browser.tabs.executeScript(null, { code: "var myEvent = new CustomEvent('knoxss_status',{'detail': '"+text+"'});
-   document.body.dispatchEvent(myEvent);"});
+   document.dispatchEvent(myEvent);"});
    
    browser.notifications.create({
      "type": "basic",
@@ -106,7 +106,7 @@ function msgKnoxss(text) {
 Now we have to receive that information on the other side in Python using Selenium's `execute_script` function, which inject our code in _page script_. Lets assume we have a Webdriver object and loaded a web page using it:
 
 ```python
-driver.execute_script("document.body.addEventListener(\"knoxss_status\", function(e){window.knoxss_status = e.detail}, false);")
+driver.execute_script("document.addEventListener(\"knoxss_status\", function(e){window.knoxss_status = e.detail}, false);")
     while True:
         text = driver.execute_script("return window.knoxss_status")
         if text is not None:
