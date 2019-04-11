@@ -68,6 +68,12 @@ function msgKnoxss(text) {
 6. Login to the KNOXSS service and get your Cookies, it has to be passed in CLI.
 7. Run `python3 automate_knoxss.py -u target_url -c cookies_string -f firefox_binary -a modified_knoxss_dir -t timeout`
 
+## What is going on here:
+
+Like I wrote in my previous post, explaining modifications: [Communication between Selenium, page script and Firefox extension](Communication-between-Selenium-page-script-and-Firefox-extension). 
+
+The tool supports the basic method of navigating and scraping links of each visited web page starting from that passed in the argument. It compares each found link to the visited ones, looking for proper extensions and checks whether the domain is suitable. It communicates with KNOXSS add-on using JavaScript custom events, that method might be useful for automation testers.
+
 ## Parameters description:
 
 `python3 automate_knoxss.py -u "https://target" -c "wordpress_logged_in_...=...; wordpress_sec_...=...; sucuri_cloudproxy_uuid_...=...; wordpress_test_cookie=WP+Cookie+check;" -f /home/firefox/firefox -a knoxss -t 90`
@@ -78,11 +84,11 @@ function msgKnoxss(text) {
 4. `-a` or `--addon` - defines the location of KNOXSS extension directory, unzipped and modified
 5. `-t` or `--timeout` - defines the timout for event
 
-## What is going on here:
+## Repository:
 
-Like I wrote in my previous post, explaining modifications: [Communication between Selenium, page script and Firefox extension](Communication-between-Selenium-page-script-and-Firefox-extension). 
+[https://github.com/haqpl/automate_knoxss](https://github.com/haqpl/automate_knoxss)
 
-The tool supports the basic method of navigating and scraping links of each visited web page starting from that passed in the argument. It compares each found link to the visited ones, looking for proper extensions and checks whether the domain is suitable. It communicates with KNOXSS add-on using JavaScript custom events, that method might be useful for automation testers.
+Please be aware when using this tool the author of KNOXSS scanner will **ban** users who will abuse his service!
 
 ## TODO:
 
@@ -90,12 +96,6 @@ The tool supports the basic method of navigating and scraping links of each visi
 2. Resume functionality - saving the state of a scan to the file and loading it on request.
 3. Summary of scanning results. For now, I recommend to use tool with `script` command to save the results or watch the browser from time to time :)
 4. Threading for navigating simultaneously in several browsers
-
-## Repository:
-
-[https://github.com/haqpl/automate_knoxss](https://github.com/haqpl/automate_knoxss)
-
-Please be aware when using this tool the author of KNOXSS scanner will **ban** users who will abuse his service!
 
 ## Credits:
 
