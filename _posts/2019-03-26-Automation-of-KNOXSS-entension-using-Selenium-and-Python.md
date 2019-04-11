@@ -35,9 +35,9 @@ Selenium automates browsers. It is widely used by automation testers but can be 
 * [Firefox extensions with selenium](https://intoli.com/blog/firefox-extensions-with-selenium/) -  I started with this blog post, which gave me an idea of how to load a Firefox extension using Selenium
 * [Creating profile with Firefox and Selenium](http://witkowskibartosz.com/blog/selenium-firefox-profile-for-automation.html) - describes how to set up a profile with Firefox needed when installing an add-on
 
-## Preparing:
+## Instalation:
 
-1. Download geckodriver - [Geckodriver release](https://github.com/mozilla/geckodriver/releases) - it should be placed in `/usr/bin/`
+1. Download latest geckodriver - [Geckodriver release](https://github.com/mozilla/geckodriver/releases) - it should be placed in `/usr/bin/` or in PATH variable.
 2. Download Firefox Developer Edition - [Firefox Developer Edition](https://www.mozilla.org/pl/firefox/developer/)
 3. Install latest Selenium in your Python environment - `pip install selenium --user`
 4. Login to the KNOXSS service and get your Cookies, it has to be passed in CLI.
@@ -56,9 +56,9 @@ function msgKnoxss(text) {
    });
 }
 ```
-5. Run `python automate_knoxss.py -u target_url -c cookies_string -f firefox_binary -a modified_knoxss_dir -t timeout`
+5. Run `python3 automate_knoxss.py -u target_url -c cookies_string -f firefox_binary -a modified_knoxss_dir -t timeout`
 
-## Parameters:
+## Parameters description:
 
 `python3 automate_knoxss.py -u "https://target" -c "wordpress_logged_in_...=...; wordpress_sec_...=...; sucuri_cloudproxy_uuid_...=...; wordpress_test_cookie=WP+Cookie+check;" -f /home/firefox/firefox -a knoxss -t 90`
 
