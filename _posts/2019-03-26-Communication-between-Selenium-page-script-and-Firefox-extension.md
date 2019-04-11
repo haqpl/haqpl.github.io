@@ -86,7 +86,7 @@ I know that JavaScript allows us to send **events** to HTML tags and saw that Se
 
 ## Custom events:
 
-We have a function called msgKnoxxs in add-ons _background script_ which is responsible for showing notifications each time Knoxss has done its job. I added two lines of code which should fire a custom event on the HTML object called `document.body`. If you read carefully you should know we are injecting code as _content script_:
+We have a function called msgKnoxxs in add-ons _background script_ which is responsible for showing notifications each time KNOXSS has done its job. I added two lines of code which should fire a custom event on the HTML object called `document.body`. If you read carefully you should know we are injecting code as _content script_:
 
 ```javascript
 function msgKnoxss(text) {
