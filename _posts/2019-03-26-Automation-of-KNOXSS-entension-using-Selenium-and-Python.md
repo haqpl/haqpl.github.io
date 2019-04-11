@@ -38,8 +38,14 @@ Selenium automates browsers. It is widely used by automation testers but can be 
 ## Instalation:
 
 1. Download latest geckodriver - [Geckodriver release](https://github.com/mozilla/geckodriver/releases) - it should be placed in `/usr/bin/` or in PATH variable.
+
+`wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz && tar -zxvf geckodriver-v0.24.0-linux64.tar.gz && cp geckodriver /usr/bin/`
+
 2. Download Firefox Developer Edition - [Firefox Developer Edition](https://www.mozilla.org/pl/firefox/developer/)
-3. Install latest Selenium in your Python environment - `pip install selenium --user`
+3. Install latest Selenium in your Python environment.
+
+`pip install selenium --user`
+
 4. Login to the KNOXSS service and get your Cookies, it has to be passed in CLI.
 5. Download KNOXSS Pro add-on - [KNOXSS](https://knoxss.me/) and unzip the XPI file. Locate the background script `index.js` and edit msgKnoxss function, it should look like that below:
 
