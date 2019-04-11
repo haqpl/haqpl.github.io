@@ -28,7 +28,7 @@ As we can read on the [knoxss.me](https://knoxss.me) page:
 
 ## What is Selenium:
 
-Selenium automates browsers. It is widely used by automation testers but can be used in security as well. Someone can ask: I can do the same with wget/curl. But Selenium can render the whole page with JavaScript and CSS as every user will see, that is useful when talking about DOM-based XSS'es. Add to it a method for detecting JavaScript alerts, Radamsa for mutation of parameters values, and you have almost a full dynamic scanner, I know that almost makes a difference :)
+Selenium automates browsers. It is widely used by automation testers but can be used in security as well. Someone can say: I can do the same with wget/curl. But Selenium can render the whole page including JavaScript and CSS, that is useful when talking about DOM-based XSS'es. Add to it a method for detecting JavaScript alerts, Radamsa for mutation of parameters values, and you have almost a full dynamic scanner, I know that almost makes a difference :)
 
 ## What I found:
 
