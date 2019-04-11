@@ -37,7 +37,7 @@ Selenium automates browsers. It is widely used by automation testers but can be 
 
 ## Instalation:
 
-1. Download latest geckodriver - [Geckodriver release](https://github.com/mozilla/geckodriver/releases) - it should be placed in `/usr/bin/` or in PATH variable.
+1. Download latest geckodriver - [Geckodriver release](https://github.com/mozilla/geckodriver/releases) - it should be placed in `/usr/bin/` or in $PATH variable.
 
 `wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz && tar -zxvf geckodriver-v0.24.0-linux64.tar.gz && cp geckodriver /usr/bin/`
 
@@ -46,8 +46,11 @@ Selenium automates browsers. It is widely used by automation testers but can be 
 
 `pip install selenium --user`
 
-4. Login to the KNOXSS service and get your Cookies, it has to be passed in CLI.
-5. Download KNOXSS Pro add-on - [KNOXSS](https://knoxss.me/) and unzip the XPI file. Locate the background script `index.js` and edit msgKnoxss function, it should look like that below:
+4. Download KNOXSS Pro add-on - [KNOXSS](https://knoxss.me/) and unzip the XPI file. 
+
+`unzip knoxss_add_on-1.2.0-fx.xpi -d knoxss`
+
+5. Locate the background script `index.js` and edit msgKnoxss function, it should look like that below:
 
 ```javascript
 function msgKnoxss(text) {
@@ -62,7 +65,8 @@ function msgKnoxss(text) {
    });
 }
 ```
-5. Run `python3 automate_knoxss.py -u target_url -c cookies_string -f firefox_binary -a modified_knoxss_dir -t timeout`
+6. Login to the KNOXSS service and get your Cookies, it has to be passed in CLI.
+7. Run `python3 automate_knoxss.py -u target_url -c cookies_string -f firefox_binary -a modified_knoxss_dir -t timeout`
 
 ## Parameters description:
 
