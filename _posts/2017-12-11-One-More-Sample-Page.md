@@ -3,25 +3,27 @@ title: SQLMAP proxy to shell tools or non-HTTP services.
 published: false
 ---
 
-# [](#header-1)The problem
+## The problem:
 
-While solving one of HTB boxes I was introduced to an interesting problem. How to automate the exploitation of non-HTTP service? I did it manually and then tried to write a proxy script, which I want to descrie below. Because of that this box is not retired yet I can't do it very detailed but you should be able to take advantage from it.
+While solving one of HTB boxes I was introduced to an interesting problem. How to automate the SQL injection exploitation of non-HTTP service? Of course, I did it manually and then after the rush for the first blood, there was time to write a proxy script, which I want to describe below. Because of that this box is not retired yet I can't do it very detailed but you should be able to take advantage of idea itself to create your own custom proxies. Let's start from diving into the information how sqlmap actually works.
 
-There should be whitespace between paragraphs.
+## SQLMAP intestines:
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+OK, so how sqlmap actually works? You should already know that it can automate the SQL injection attack using requests to HTTP/S sites and some magic :) While passing an interesting HTTP request to it, it can test all parameters, no matter if it is GET or POST or even HTTP header based injection point. But what to do when you know that your non-HTTP service is prone to SQL injection? You can exploit it manually which is recommended for learning sake or use a tool which is dedicated to that service being able to communicate with it and script around your way. 
+
+## Toolbelt:
+
+- sqlmap 1.3.9#stable
+- python 3.7
+
+## What I found:
+
+* [Create a simple HTTP server withn Python 3](https://daanlenaerts.com/blog/2015/06/03/create-a-simple-http-server-with-python-3/) -  I started with this blog post, which gave me an idea of how to load a Firefox extension using Selenium
+* [Creating profile with Firefox and Selenium](http://witkowskibartosz.com/blog/selenium-firefox-profile-for-automation.html) - describes how to set up a profile with Firefox needed when installing an add-on
 
 
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## [](#header-2)Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### [](#header-3)Header 3
+## 
 
 ```js
 // Javascript code with syntax highlighting.
