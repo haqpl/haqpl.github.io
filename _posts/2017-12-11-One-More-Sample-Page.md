@@ -1,17 +1,17 @@
 ---
-title: One More Sample Page
+title: SQLMAP proxy to shell tools or non-HTTP services.
 published: false
 ---
 
-Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
+# [](#header-1)The problem
 
-[Link to another page](another-page).
+While solving one of HTB boxes I was introduced to an interesting problem. How to automate the exploitation of non-HTTP service? I did it manually and then tried to write a proxy script, which I want to descrie below. Because of that this box is not retired yet I can't do it very detailed but you should be able to take advantage from it.
 
 There should be whitespace between paragraphs.
 
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
-# [](#header-1)Header 1
+
 
 This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 
