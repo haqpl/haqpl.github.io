@@ -18,7 +18,7 @@ You should already know that it can automate the SQL injection attack using requ
 
 ## What I found:
 
-* [Create a simple HTTP server withn Python 3](https://daanlenaerts.com/blog/2015/06/03/create-a-simple-http-server-with-python-3/) -  I started with this blog post, which gave me an idea of how to load a Firefox extension using Selenium
+* [Create a simple HTTP server withn Python 3](https://daanlenaerts.com/blog/2015/06/03/create-a-simple-http-server-with-python-3/) -  this post gave me the backbone of my proxy, defin
 * [Creating profile with Firefox and Selenium](http://witkowskibartosz.com/blog/selenium-firefox-profile-for-automation.html) - describes how to set up a profile with Firefox needed when installing an add-on
 
 
