@@ -7,9 +7,9 @@ published: false
 
 While solving one of HTB boxes I was introduced to an interesting problem. How to automate the SQL injection exploitation of non-HTTP service? Of course, I did it manually and then after the rush for the first blood, there was time to write a proxy script, which I want to describe below. Because of that this box is not retired yet I can't do it very detailed but you should be able to take advantage of idea itself to create your own custom proxies. Let's start from diving into the information how sqlmap actually works.
 
-## SQLMAP intestines:
+## SQLMAP:
 
-OK, so how sqlmap actually works? You should already know that it can automate the SQL injection attack using requests to HTTP/S sites and some magic :) While passing an interesting HTTP request to it, it can test all parameters, no matter if it is GET or POST or even HTTP header based injection point. But what to do when you know that your non-HTTP service is prone to SQL injection? You can exploit it manually which is recommended for learning sake or use a tool which is dedicated to that service being able to communicate with it and script around your way. 
+You should already know that it can automate the SQL injection attack using requests to HTTP/S sites and some magic :) While passing an interesting HTTP request to it, it can test all parameters, no matter if it is GET or POST or even HTTP header based injection point. But what to do when you know that your non-HTTP service is prone to SQL injection? You can exploit it manually which is recommended for learning sake or use a tool which is dedicated to that service being able to communicate with it and script around your way. 
 
 ## Toolbelt:
 
