@@ -127,8 +127,9 @@ Database: information_schema
 
 ```
 
-
-
 ## Credits:
 
 [https://twitter.com/kolokokop](@kolokokop), he did it the same way ;)
+
+
+If you found that idea interesting and have a non-HTTP service in mind which could be tested, please contact me or just comment the post.
