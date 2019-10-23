@@ -29,7 +29,7 @@ Below you can see an example usage of `shiny-garbanzo` and the corresponding out
 {% include figure.html file="/assets/shiny-garbanzo.png" alt="/assets/shiny-garbanzo.png" max-width="500px" number="1" caption="SQL injection in non-HTTP service." %}
 
 ```
-python3 shiny-garbanzo.py --host '127.0.0.1' --tool "whois" --port 1337 --arguments="-h 10.10.10.155 SQLMAP"
+python3 shiny-garbanzo.py --host '127.0.0.1' --tool "whois" --port 1337 --arguments="-h IP SQLMAP"
 [i] Starting server on 1337 PORT
 [i] Start with this:
 [+] sqlmap -u "127.0.0.1:1337" --data "cmd=" -p "cmd" --method POST
