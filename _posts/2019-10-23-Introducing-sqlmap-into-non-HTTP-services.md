@@ -24,7 +24,7 @@ https://github.com/haqpl/shiny-garbanzo
 Below you can see an example usage of `shiny-garbanzo` and the corresponding output of sqlmap, which identified and successfully exploited four different types of SQLi vulnerability in non-HTTP service.
 
 
-{% include figure.html file="/assets/shiny-garbanzo.png" alt="/assets/shiny-garbanzo.png" max-width="500px" number="1" caption="SQL injection in non-HTTP service." %}
+{% include figure.html file="/assets/shiny-garbanzo.png" alt="/assets/shiny-garbanzo.png" number="1" caption="SQL injection in non-HTTP service." %}
 
 ```
 python3 shiny-garbanzo.py --host '127.0.0.1' --tool "whois" --port 1337 --arguments="-h IP SQLMAP"
@@ -130,4 +130,4 @@ Database: information_schema
 [https://twitter.com/kolokokop](@kolokokop), he did it the same way ;)
 
 
-If you found that idea interesting and have a non-HTTP service in mind which could be tested, please contact me or just comment the post.
+If you found that idea interesting and have a non-HTTP service in mind which could be tested, please contact me or just comment on the post.
