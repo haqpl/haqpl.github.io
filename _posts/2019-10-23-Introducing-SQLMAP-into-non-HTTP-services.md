@@ -5,7 +5,7 @@ published: false
 
 ## The problem:
 
-Lately, I was introduced to an interesting problem. How to automate the SQL injection exploitation of non-HTTP service? Sometimes services like `whois` are using custom SQL databases, which is an ideal situation to introduce unwanted problems. Because of that, this `whois` service is working on a non-retired HTB box I can't do it very detailed but you should be able to take advantage of the idea itself to create your own custom proxies. Let's start by diving into the information on how sqlmap actually works.
+Lately, I was introduced to an interesting problem. How to automate the SQL injection exploitation of non-HTTP service? Sometimes services like `whois` are using custom SQL databases, which is an ideal situation to introduce unwanted problems. Because of that, the `whois` service is working on a non-retired HTB box I can't do it very detailed but you should be able to take advantage of the idea itself to create your custom proxies. Let's start by diving into the information on how sqlmap actually works.
 
 ## SQLMAP:
 
