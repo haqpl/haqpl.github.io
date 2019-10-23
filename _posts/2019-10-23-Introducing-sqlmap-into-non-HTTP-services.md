@@ -129,4 +129,4 @@ Database: information_schema
 [https://twitter.com/kolokokop](@kolokokop), he did it the same way ;)
 
 
-If you found that idea interesting and have a non-HTTP service in mind which could be tested, please contact me or just comment on the post.
+If you found that idea interesting or have a non-HTTP service in mind which could be tested, please contact me or just comment on the post.
