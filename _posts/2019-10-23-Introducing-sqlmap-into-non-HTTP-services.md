@@ -38,7 +38,7 @@ python3 shiny-garbanzo.py --host '127.0.0.1' --tool "whois" --port 1337 --argume
 ```
 
 ```
-sqlmap -u "http://127.0.0.1:1337" --data "cmd=" -p "cmd" --method POST --tables --flush-session
+sqlmap -u "http://127.0.0.1:1337" --data "cmd=" -p "cmd" --method POST --tables 
         ___
        __H__
  ___ ___[']_____ ___ ___  {1.3.10#stable}
@@ -51,7 +51,6 @@ sqlmap -u "http://127.0.0.1:1337" --data "cmd=" -p "cmd" --method POST --tables 
 [*] starting @ 18:20:16 /2019-10-23/
 
 [18:20:17] [WARNING] provided value for parameter 'cmd' is empty. Please, always use only valid parameter values so sqlmap could be able to run properly
-[18:20:17] [INFO] flushing session file
 [18:20:17] [INFO] testing connection to the target URL
 [18:20:17] [WARNING] turning off pre-connect mechanism because of incompatible server ('BaseHTTP/0.6 Python/3.7.5rc1')
 [18:20:17] [INFO] checking if the target is protected by some kind of WAF/IPS
