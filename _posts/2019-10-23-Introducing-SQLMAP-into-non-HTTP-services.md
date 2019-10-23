@@ -130,3 +130,6 @@ Database: information_schema
 
 ```
 
+## Credits:
+
+[https://twitter.com/kolokokop](@kolokokop), he did it the same way ;)
