@@ -16,7 +16,7 @@ You should already know that it can automate the SQL injection attack using requ
 
 ## Tool:
 
-https://github.com/haqpl/shiny-garbanzo
+[https://github.com/haqpl/shiny-garbanzo](https://github.com/haqpl/shiny-garbanzo)
 
 
 ## Working example:
