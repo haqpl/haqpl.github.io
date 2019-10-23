@@ -18,7 +18,7 @@ You should already know that it can automate the SQL injection attack using requ
 
 ## 
 
-```js
+```
 python3 whois_proxy.py --host '127.0.0.1' --tool "whois" --port 1337 --arguments="-h 10.10.10.155 SQLMAP"
 [i] Starting server on 1337 PORT
 Start with this:
