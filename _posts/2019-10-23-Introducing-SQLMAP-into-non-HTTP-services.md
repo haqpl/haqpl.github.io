@@ -23,7 +23,7 @@ https://github.com/haqpl/shiny-garbanzo
 
 ## Working example:
 
-Below you can see an example usage of `shiny-garbanzo` and the corresponding output of SQLMAP, which identified and successfully exploited three different types of SQLi vulnerability in non-HTTP `whois` service.
+Below you can see an example usage of `shiny-garbanzo` and the corresponding output of SQLMAP, which identified and successfully exploited four different types of SQLi vulnerability in non-HTTP service.
 
 ```
 python3 shiny-garbanzo.py --host '127.0.0.1' --tool "whois" --port 1337 --arguments="-h 10.10.10.155 SQLMAP"
