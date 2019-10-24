@@ -3,11 +3,11 @@ title: Introducing sqlmap into non-HTTP services.
 published: true
 ---
 
-Recently, I was introduced to an interesting problem. How to automate the SQL injection exploitation of non-HTTP service? Sometimes services like `whois` are using custom SQL databases, which is an ideal situation to produce unwanted problems. Because of that, the `whois` service is working on a non-retired HTB box, I can't do it very detailed, but you should be able to take advantage of the idea itself to create your custom proxies or just give a try with `shiny-garbonzo`. Let's start by diving into the information on how sqlmap works.
+Recently, I was introduced to an interesting problem: How to automate the SQL injection exploitation of non-HTTP service? Sometimes services like `whois` are using custom SQL databases, which is an ideal situation to produce unwanted problems. Because of that, the `whois` service is working on a non-retired [HachTheBox.eu](https://hackthebox.eu) box, I can't do it very detailed, but you should be able to take advantage of the idea itself to create your custom proxies or just give a try with `shiny-garbonzo` which is a tool created for that purpose. Let's start by diving into the information on how sqlmap works.
 
 ## sqlmap®:
 
-You should already know that it can automate the SQL injection attack using requests to HTTP/S sites and some magic :) While passing an interesting HTTP request or URL to it, it can test all parameters, no matter if it is GET or POST or even HTTP header based injection point. But what to do when you know that your non-HTTP service is prone to SQL injection attack? You can exploit it manually which is recommended for learning sake or use a tool that is dedicated to that service being able to communicate with it and script your way into.
+Sqlmap can automate the SQL injection attack using requests to HTTP/S sites and some magic :) While passing an interesting HTTP request or URL to it, it can test all parameters, no matter if it is GET or POST or even HTTP header based injection point. But what to do when you know that your non-HTTP service is prone to SQL injection attack? You can exploit it manually which is recommended for learning sake or use a tool that is dedicated to that service being able to communicate with it and script your way into.
 
 ## Toolbelt:
 
