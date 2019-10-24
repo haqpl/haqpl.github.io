@@ -33,7 +33,7 @@ The workflow looks like that:
 3. Parse `sqlmap` input and assembly shell command to invoke the tool.
 4. Return the output from shell as a valid HTTP response.
 
-Have in mind that `sqlmap` must be called with `--data "cmd=" -p "cmd" --method POST` which will tell it to use `cmd` parameter as an injection point.
+Have in mind that `sqlmap` must be called with `--data "cmd=" -p "cmd" --method POST` which will tell it to use HTTP POST request and `cmd` parameter as an injection point.
 
 ```
 usage: shiny-garbanzo.py [-h] [--host HOST] [--port PORT] [--tool TOOL]
