@@ -18,7 +18,7 @@ You should already know that it can automate the SQL injection attack using requ
 
 [https://github.com/haqpl/shiny-garbanzo](https://github.com/haqpl/shiny-garbanzo)
 
-## How does it work?:
+## How does it work?
 
 The workflow looks like that:
 
