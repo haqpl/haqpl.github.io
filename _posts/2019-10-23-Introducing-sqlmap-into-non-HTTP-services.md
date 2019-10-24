@@ -30,7 +30,7 @@ The workflow looks like that:
 
 ## Working example:
 
-Below you can see an example usage of `shiny-garbanzo` and the corresponding output of sqlmap, which identified and successfully exploited four different types of SQLi vulnerability in non-HTTP service.
+Below you can see an example usage of `shiny-garbanzo` and the corresponding output of `sqlmap`, which identified and successfully exploited four different types of SQLi vulnerability in non-HTTP service.
 
 
 {% include figure.html file="/assets/shiny-garbanzo.png" alt="/assets/shiny-garbanzo.png" number="1" caption="SQL injection in non-HTTP service." %}
