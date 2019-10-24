@@ -3,11 +3,11 @@ title: Introducing sqlmap into non-HTTP services.
 published: true
 ---
 
-Recently, I was introduced to an interesting problem: How to automate the SQL injection exploitation of non-HTTP service? Sometimes services like `whois` are using custom SQL databases, which is an ideal situation to produce unwanted problems. Because of that, the `whois` service is working on a non-retired [HachTheBox.eu](https://hackthebox.eu) box, I can't do it very detailed, but you should be able to take advantage of the idea itself to create your custom proxies or just give a try with `shiny-garbonzo` which is a tool created for that purpose. Let's start by diving into the information on how sqlmap works.
+Recently, I was introduced to an interesting problem: How to automate the SQL injection exploitation of non-HTTP service? Sometimes services like `whois` are using custom SQL databases, which is an ideal situation to produce unwanted problems because you have to take care of the sanitization of user input. The `whois` service, which I used for testing is working on a non-retired [HachTheBox.eu](https://hackthebox.eu) box, so I can't do it very detailed, but you should be able to take advantage of the idea itself to create your custom proxies or just give a try with `shiny-garbonzo` - a HTTP wrapper, which will invoke your tool and pass to it `sqlmap's` input. Let’s start by diving into how `sqlmap` works.
 
 ## sqlmap®:
 
-Sqlmap can automate the SQL injection attack using requests to HTTP/S sites and some magic :) While passing an interesting HTTP request or URL to it, it can test all parameters, no matter if it is GET or POST or even HTTP header based injection point. But what to do when you know that your non-HTTP service is prone to SQL injection attack? You can exploit it manually which is recommended for learning sake or use a tool that is dedicated to that service being able to communicate with it and script your way into.
+`Sqlmap` can automate the SQL injection attack using requests to HTTP/S sites and some magic :) When you think about SQLi you might imagine it's a web application attack vector but other non-HTTP based services are using databases as well so they might be prone. While passing an interesting HTTP request or URL to `sqlmap`, it can test all parameters, no matter if it is GET or POST or even HTTP header based injection point. But what to do when you know that your non-HTTP service is prone to SQL injection attack? You can exploit it manually which is recommended for learning sake or use a tool that is dedicated to that service being able to communicate with it and script your way into.
 
 ## Toolbelt:
 
@@ -23,8 +23,8 @@ Sqlmap can automate the SQL injection attack using requests to HTTP/S sites and 
 The workflow looks like that:
 
 1. Start IPv4/IPv6 HTTP Server and listen on given IP:PORT.
-2. Loop for connections from sqlmap.
-3. Parse sqlmap input and assembly shell command to invoke the tool.
+2. Loop for connections from `sqlmap`.
+3. Parse `sqlmap` input and assembly shell command to invoke the tool.
 4. Return the output from shell as a valid HTTP response.
 
 
