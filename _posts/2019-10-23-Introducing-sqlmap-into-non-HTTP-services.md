@@ -20,12 +20,20 @@ Recently, I was introduced to an interesting problem: How to automate the SQL in
 
 ## How does it work?
 
+When you run `shiny-garbanzo` in the following way:
+
+```
+python3 shiny-garbanzo.py --host '127.0.0.1' --tool "whois" --port 1337 --arguments="-h IP SQLMAP"
+```
+
 The workflow looks like that:
 
 1. Start IPv4/IPv6 HTTP Server and listen on given IP:PORT.
 2. Loop for connections from `sqlmap`.
 3. Parse `sqlmap` input and assembly shell command to invoke the tool.
 4. Return the output from shell as a valid HTTP response.
+
+Have in mind that `sqlmap` must be called with `--data "cmd=" -p "cmd" --method POST` which will tell it to use `cmd` parameter as an injection point.
 
 
 ## Working example:
