@@ -18,6 +18,15 @@ You should already know that it can automate the SQL injection attack using requ
 
 [https://github.com/haqpl/shiny-garbanzo](https://github.com/haqpl/shiny-garbanzo)
 
+## How it works?:
+
+The workflow looks like that:
+
+1. Start IPv4/IPv6 HTTP Server and listen on given IP:PORT.
+2. Loop for connections from sqlmap.
+3. Parse sqlmap input and assembly shell command to invoke the tool.
+4. Return the output from shell as a valid HTTP response.
+
 
 ## Working example:
 
