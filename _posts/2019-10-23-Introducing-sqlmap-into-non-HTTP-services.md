@@ -35,8 +35,25 @@ The workflow looks like that:
 
 Have in mind that `sqlmap` must be called with `--data "cmd=" -p "cmd" --method POST` which will tell it to use `cmd` parameter as an injection point.
 
+```
+usage: shiny-garbanzo.py [-h] [--host HOST] [--port PORT] [--tool TOOL]
+                         [--arguments [ARGUMENTS [ARGUMENTS ...]]]
+                         [--verbose VERBOSE]
 
-## Working example:
+Non-HTTP sqlmap proxy
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --host HOST           IP to listen on.
+  --port PORT           Port to listen on.
+  --tool TOOL           Tool to use for non-HTTP communication.
+  --arguments [ARGUMENTS [ARGUMENTS ...]]
+                        Arguments passed to target tool, use SQLMAP word to
+                        place SQLMAP's input where it's needed.
+  --verbose VERBOSE     Verbose mode.
+```
+
+## Working test-case:
 
 Below you can see an example usage of `shiny-garbanzo` and the corresponding output of `sqlmap`, which identified and successfully exploited four different types of SQLi vulnerability in non-HTTP service.
 
