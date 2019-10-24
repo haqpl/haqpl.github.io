@@ -137,6 +137,6 @@ Database: information_schema
 
 [@kolokokop](https://twitter.com/kolokokop), he did it the same way ;)
 
--------------------------------------------------------------------------------------------------------------------------------
+<hr>
 
 If you found that idea interesting or have a non-HTTP service in mind which could be tested, please contact me or just comment on the post.
