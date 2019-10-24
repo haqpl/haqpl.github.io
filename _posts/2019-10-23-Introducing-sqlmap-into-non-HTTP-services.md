@@ -3,7 +3,7 @@ title: Introducing sqlmap into non-HTTP services.
 published: true
 ---
 
-Recently, I was introduced to an interesting problem: How to automate the SQL injection exploitation of non-HTTP service? Sometimes services like `whois` are using custom SQL databases, which is an ideal situation to produce unwanted problems because you have to take care of the sanitization of user input. The `whois` service, which I used for testing is working on a non-retired [HachTheBox.eu](https://hackthebox.eu) box, so I can't do it very detailed, but you should be able to take advantage of the idea itself to create your custom proxies or just give a try with `shiny-garbonzo` - a HTTP wrapper, which will invoke your tool and pass to it `sqlmap's` input. Let’s start by diving into how `sqlmap` works.
+Recently, I was introduced to an interesting problem: How to automate the SQL injection exploitation of non-HTTP service? Sometimes services like `whois` are using custom SQL databases, which is an ideal situation to produce unwanted problems because you have to take care of the sanitization of user input. The `whois` service, which I used for testing is working on a non-retired [HachTheBox.eu](https://hackthebox.eu) box, so I can’t do it very detailed, but you should be able to take advantage of the idea itself to create your custom proxies or just give a try with shiny-garbonzo - an HTTP wrapper, which will invoke your tool and pass to it the sqlmap's input. Let’s start by diving into how `sqlmap` works.
 
 ## sqlmap®:
 
