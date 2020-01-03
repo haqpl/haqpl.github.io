@@ -29,23 +29,29 @@ I type this to the interesting input field, submit, and then check the response 
                                                                                                                                   this is called `HTML attribute injection context`. The HTML attributes are closed by characters: `'` or `"` so injecting one as a payload will close the attribute and allow us to add new attribute or just close HTML tag with `>` character. This happened here, `input` tag was closed, so we can inject a new tag. To achive our goal - execute `alert(1)` we have to inject `<script>alert(1)</script>`.
 
 Final payload:
+
 Add dummy attribute value, close attribute, close input tag, add script tag with JavaScript code.
 
-`x'><script>alert(1)</script>`
+`x'><script>alert(1)</script>` which translates to:
 
 ```html
 <input type="text" class="form-control input-lg" id="search-church" id="xss" value='x'><script>alert(1)</script>' name="xss" placeholder="xss">
 ```
 
-## Toolbelt:
+{% include figure.html file="/assets/alert.png" alt="/assets/alert.png" max-width="500px" number="1" caption="Profit." %}
 
-- geckodriver 0.23.0 ( 2018-10-04)
-- Mozilla Firefox 67.0b4 Developer Edition
-- Selenium 3.141.0
-- KNOXSS Add-on 1.2.0
-- Python 3.6.5
-- Visual Studio Code :love:
+## Lvl02:
 
+{% include figure.html file="/assets/lvl2.png" alt="/assets/lvl2.png" max-width="500px" number="1" caption="Level 02." %}
+
+```html
+<div class='aaaaaa'&quot;&gt;xsshere'>like Aldus PageMaker including versions of Lorem Ipsum.</div>
+```
+
+Our probe ended also in the HTML attribute context but this time the > character is encoded to its HTML equivalent: which makes it impossible to close input tag but it doesn't mean we can't inject new attributes. To achieve our goal we have to use HTML events which as value takes JavaScript.
+
+Solution:
+`x' onmouseover=alert(1) x`
 ## KNOXSS specification:
 
 As we can read on the [knoxss.me](https://knoxss.me) page:
