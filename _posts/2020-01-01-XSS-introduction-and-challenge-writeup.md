@@ -37,7 +37,7 @@ By following the steps from “Brief XSS methology” we can see here that our p
 
 `’` character closed an attribute, `>` closed the tag and the rest was rendered as text.
 
-We have here `HTML attribute injection context`. The HTML attributes can be enclosed by characters: `'`, `"` or they can appear without anything - up to the first white character so injecting one as a payload will close the attribute and allow us to add new attribute or just close HTML tag with `>` character. This happened in the example above - `input` tag was closed, so we can inject a new tag. To achieve our goal - execute `alert(1)` we have to inject `<script>alert(1)</script>`.
+We have here `HTML attribute injection context`. The HTML attributes can be enclosed by characters: `'`, `"` or they can appear without anything - up to the first white character so injecting `’` as a payload will close the attribute and allow us to add new attribute or just close HTML tag with `>` character. This happened in the example above - `input` tag was closed, so we can inject a new tag. To achieve our goal - execute `alert(1)` we have to inject `<script>alert(1)</script>`.
 
 Final payload:
 
