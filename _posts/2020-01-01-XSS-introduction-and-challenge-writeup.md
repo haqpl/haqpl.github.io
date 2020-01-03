@@ -25,9 +25,8 @@ Probe is sent via HTTP/S proxy like Burp and with opened Developer Console in br
                                                                                                                                   Ok, we see here that our probe broke the rendering of the HTML, this is always a good sign for pentester and worse for a developer :) You can read it as: some of characters from the probe are not encoded properly before returning them to the client and interpreted by a browser as a legit code, having the influence on the final look/JavaScript workflow of the page.
 
 ```html
-<input type="text" class="form-control input-lg" id="search-church" id="xss" value='aaaaaa'">xsshere' name="xss" placeholder="xss">                                                                                                                               
-```                                                                                                                                  
-                                                                                                                                  this is called `HTML attribute injection context`. The HTML attributes are closed by characters: `'` or `"` so injecting one as a payload will close the attribute and allow us to add new attribute or just close HTML tag with `>` character. This happened here, `input` tag was closed, so we can inject a new tag. To achive our goal - execute `alert(1)` we have to inject `<script>alert(1)</script>`.
+<input type="text" class="form-control input-lg" id="search-church" id="xss" value='aaaaaa'">xsshere' name="xss" placeholder="xss">                                                                                                                                  ``` 
+                                                                                                                              this is called `HTML attribute injection context`. The HTML attributes are closed by characters: `'` or `"` so injecting one as a payload will close the attribute and allow us to add new attribute or just close HTML tag with `>` character. This happened here, `input` tag was closed, so we can inject a new tag. To achive our goal - execute `alert(1)` we have to inject `<script>alert(1)</script>`.
 
 Final payload:
 
