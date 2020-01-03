@@ -1,6 +1,6 @@
 ---
 title: XSS introduction and challenge writeup.
-published: false
+published: true
 author: Maciej Piechota
 ---
 
