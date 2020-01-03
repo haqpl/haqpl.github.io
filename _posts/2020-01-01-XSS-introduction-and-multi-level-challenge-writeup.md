@@ -64,6 +64,13 @@ Solution:
 
 `x' onmouseover=alert(1) x`
 
+and this is how our payload looks in HTML:
+
+```html
+<div class='x' onmouseover=alert(1) x''>like Aldus PageMaker including versions of Lorem Ipsum.</div>
+```
+`alert(1)` will be executed after triggering the `onmouseover` event. It is important to take care of last `'` charracter adding dummy `x` attribute.
+
 ## Lvl03:
 
 Sometimes the input to the application is passed via URL, we have to identify the parameters which are used in the JavaScript source code(static analysis).
