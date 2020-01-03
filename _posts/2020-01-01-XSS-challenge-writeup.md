@@ -14,16 +14,27 @@ Loging in itself is also a baby SQL injection challenge - `admin' OR 1=1-- t` - 
 
 ## Fast XSS methodology:
 
-First we want to find out where our input is reflected in the attacked page(this is so called `injection context`), then we have to check what transformations are being made to our payload by the application, giving us the information how CSS/HTML/JavaScript sensitive characters are treated and what possibilities to inject malicious code are left unsecured. To do this in one request let's use the XSS probe:
+First we want to find out if and where our input is reflected in the attacked page(this is so called `injection context`), then we have to check what transformations are being made to our payload by the application, giving us the information how CSS/HTML/JavaScript sensitive characters are treated and what possibilities to inject malicious code are left unsecured. To do this in one request let's use the XSS probe:
 `aaaaaa'">xsshere`
 I type this to the interesting input field, submit, and then check the response for `xsshere` string as shown in Lvl01 below: 
 
 ## Lvl01:
 
-```html
-<input type="text" class="form-control input-lg" id="search-church" id="xss" value='aaaaaa'">xsshere' name="xss" placeholder="xss">                                                                                                                               ```                                                                                                                               
+{% include figure.html file="/assets/lvl01.png" alt="/assets/lvl01.png" max-width="500px" number="1" caption="Localizing the inection contenxt." %}
+                                                                                                                                  Ok, we see here that our probe broke the rendering of the HTML, this is always a good sign for pentester and worse for a developer :) You can read it as: some of characters from the probe are not encoded properly before returning them to the client and interpreted by a browser as a legit code, having the influence on the final look/JavaScript workflow of the page.
 
-                                                                                                                                  Ok we see here that our probe broke the rendering of the HTML, this is always a good sign for pentester and worse for a developer :) You can read it as: some of characters from the probe are not encoded properly before reaturning them to the client and interpreted by a browser as legit code, having the influence 
+```html
+<input type="text" class="form-control input-lg" id="search-church" id="xss" value='aaaaaa'">xsshere' name="xss" placeholder="xss">                                                                                                                               ```  
+                                                                                                                                  this is called `HTML attribute injection context`. The HTML attributes are closed by characters: `'` or `"` so injecting one as a payload will close the attribute and allow us to add new attribute or just close HTML tag with `>` character. This happened here, `input` tag was closed, so we can inject a new tag. To achive our goal - execute `alert(1)` we have to inject `<script>alert(1)</script>`.
+
+Final payload:
+Add dummy attribute value, close attribute, close input tag, add script tag with JavaScript code.
+
+`x'><script>alert(1)</script>`
+
+```html
+<input type="text" class="form-control input-lg" id="search-church" id="xss" value='x'><script>alert(1)</script>' name="xss" placeholder="xss">
+```
 
 ## Toolbelt:
 
