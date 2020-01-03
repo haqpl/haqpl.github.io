@@ -1,10 +1,10 @@
 ---
-title: XSS introduction and challenge writeup.
+title: XSS introduction and multi-level challenge writeup.
 published: true
 author: Maciej Piechota
 ---
 
-A few months ago I took place in the XSS challenge organized by @haxel0rd and later was asked about explaining my solutions. The challenge was divided into levels starting from easy to the hard one, each level was about exploiting different XSS context, which was great in terms of learning sake. I will describe each solution and some theory behind them, so let's dive in.
+A few months ago I took place in multi-level XSS challenge organized by @haxel0rd and later was asked about explaining my solution. The challenge was divided into levels starting from easy to the hard one, each level was about exploiting different XSS context, which was great in terms of learning sake. I will describe each solution and some theory behind them, so let's dive in.
 
 ## The challenge:
 
