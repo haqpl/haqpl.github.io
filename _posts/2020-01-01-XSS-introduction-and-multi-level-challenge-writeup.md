@@ -146,7 +146,7 @@ let input = `aaaaa'">xsshere`;
 $("#hello-xss").append(`Nothing intresting found? Input = '${escapeOutput(input)}'`);
 ```
 
-But there is a filter - we can't start a new `script` tag. There are three strings literals in JavaScript: `'`, `"` and `` ` ``. So following schematics from the prevoius level, we craft a payload like: ``xsshere ` ; alert(1)//`` and this is the solution for this level.
+But there is a filter - we can't start a new `script` tag. There are three strings literals in JavaScript: `'`, `"` and `` ` ``. Following schematics from the previous level, we craft a payload like: ``xsshere ` ; alert(1)//`` and that is the solution for the last level in this part of writeup.
 
 
 
