@@ -22,12 +22,12 @@ Logging into the challenge was an entry obstacle itself. It was a simple SQL Inj
 
 To start exploiting XSS you first have to find out if and where our input is reflected on the attacked page(this is so-called `injection context`). Then, when we found that, we have to check what transformations are being made to our payload by the application, giving us the information how CSS/HTML/JavaScript sensitive characters are treated and what possibilities to inject malicious code are left unsecured. To do this in one request let's use an XSS probe:
 `aaaaaa'">xsshere`
-I type this to the interesting input field, submit, and check the response for `xsshere` string as shown in Lvl01 below. 
-Probe is sent via HTTP/S proxy like Burp and with opened Developer Console in browser to observe JavaScript errors.
+I type this to the interesting input field, submit, and check the response for `xsshere` string as shown in Lvl01 below.
+The probe is sent via HTTP/S proxy like Burp and with opened Developer Console in browser to observe JavaScript errors.
 
 ## Lvl01:
 
-Ok, we can see here that our probe broke the rendering of the HTML, this is always a good sign for pentester and worse one for a developer :) You can read it as: some of characters from the probe are not encoded properly before returning them to the client and interpreted by a browser as a legit code, having the influence on the final look/JavaScript workflow of the page.
+By following the steps from “Brief XSS methology” we can see here that our probe broke the rendering of the HTML - this is usually a good sign for pentester and not that good for a developer :) You can read it as: some of the probe’s characters some of the characters from the probe are not properly encoded/escaped  before returning them to the client and therefore interpreted by a browser as a legit code, having the influence on the final look/JavaScript workflow of the page.
 
 {% include figure.html file="/assets/lvl01.png" alt="/assets/lvl01.png" max-width="500px" number="1" caption="Localizing the inection contenxt." %}
                                                                                                                                   
@@ -35,11 +35,11 @@ Ok, we can see here that our probe broke the rendering of the HTML, this is alwa
 <input type="text" class="form-control input-lg" id="search-church" id="xss" value='aaaaaa'">xsshere' name="xss" placeholder="xss">
 ```
 
-this is called `HTML attribute injection context`. The HTML attributes are closed by characters: `'` or `"` so injecting one as a payload will close the attribute and allow us to add new attribute or just close HTML tag with `>` character. This happened here, `input` tag was closed, so we can inject a new tag. To achive our goal - execute `alert(1)` we have to inject `<script>alert(1)</script>`.
+there we have `HTML attribute injection context`. The HTML attributes are closed by characters: `'` or `"` so injecting one as a payload will close the attribute and allow us to add new attribute or just close HTML tag with `>` character. This happened in the example abovehere - `input` tag was closed, so we can inject a new tag. To achieve our goal - execute `alert(1)` we have to inject `<script>alert(1)</script>`.
 
 Final payload:
 
-Add dummy attribute value, close attribute, close input tag, add script tag with JavaScript code.
+Add a dummy attribute value inside an input, close the attribute, close the input tag, add a script tag with JavaScript code.
 
 `x'><script>alert(1)</script>` which translates to:
 
@@ -51,7 +51,7 @@ Add dummy attribute value, close attribute, close input tag, add script tag with
 
 ## Lvl02:
 
-Our probe ended up also in the HTML attribute context but this time the `>` character is properly encoded to its HTML equivalent: `&gt;` which makes it impossible to close input tag but it doesn't mean we can't inject new attributes. To achieve our goal we have to use HTML events which as value takes JavaScript.
+In level 2, the probe from Lvl01 also ended up in the `HTML attribute context` but this time the `>` character is properly escaped to its HTML equivalent: `&gt;` which makes it hard to escape from the context but it doesn't mean we can't inject new attributes. To achieve our goal we have to use HTML events which as value takes JavaScript.
 
 {% include figure.html file="/assets/lvl2.png" alt="/assets/lvl2.png" max-width="500px" number="3" caption="Level 02." %}
 
@@ -64,13 +64,13 @@ Solution:
 
 ## Lvl03:
 
-Sometimes the input to the application is passed via URL, we have to identify the parameters which are used in the JavaScript source code (static analysis).
+Sometimes the input to the application is passed via URL, we have to identify the parameters which are used in the JavaScript source code(static analysis).
 
 {% include figure.html file="/assets/lvl3.png" alt="/assets/lvl3.png" max-width="500px" number="4" caption="Level 03." %}
 
 `$('#hmmm').append("<li ${_text}>Hello world!</li>");`
 
-this line is vulnerable, again HTML attribute context but we can't use any of interesting characters because of filtering:
+the above line is vulnerable to XSS, again the `HTML attribute context` but we can't use any of interesting characters because of filtering:
 
 ```javascript
 function escapeOutput(toOutput){
@@ -83,26 +83,26 @@ function escapeOutput(toOutput){
 }
 ```
 
-luckily we do not have to use them. Browsers are so kind that they try to fix "mistakes" for us:
+Luckily we do not have to use them. Browsers are so kind that they try to fix "mistakes" for us:
 
 Payload:
 `xss=onmouseover=alert(1)`
 
-the value `alert(1)` of event is automatically enclosed with `"` character.
+the value `alert(1)` of the event is automatically enclosed with `"` character.
 
 {% include figure.html file="/assets/lvl3_1.png" alt="/assets/lvl3_1.png" max-width="500px" number="5" caption="Level 03 - Payload." %}
 
 ## Lvl04:
 
-This level was solved with an unintended solution and introduces to us the next injection context - JavaScript context.
+This level was solved with an unintended solution and introduces the next injection context - `JavaScript context`.
 
 {% include figure.html file="/assets/lvl4.png" alt="/assets/lvl4.png" max-width="500px" number="6" caption="Level 04 - JavaScript context." %}
 
-Developer console shows the JavaScript error: 
+Developer console shows the following JavaScript error:
 
 {% include figure.html file="/assets/lvl4_1.png" alt="/assets/lvl4_1.png" max-width="500px" number="7" caption="Level 04 - JavaScript error." %}
 
-which tells us that the execution of the JavaScript was interrupted because of our injected payload. The steps to do in that case are usually the same:
+This tells us that the execution of the JavaScript was interrupted because of the injected payload. In a scenario like this we usually want to:
 
 - Close all opened strings, parentheses, remember that the JavaScript before injection must be "satisfied".
 - Add `;` as we want to start new instruction.
@@ -118,9 +118,7 @@ Intended solution:
 
 ## Lvl05:
 
-This is very similar to the previous level.
-
-We're in the JavaScript context.
+This level is very similar to the previous one - we are once again in the `JavaScript context`.
 
 {% include figure.html file="/assets/lvl5.png" alt="/assets/lvl5.png" max-width="500px" number="9" caption="Level 05 - JavaScript variable context." %}
 
@@ -139,7 +137,7 @@ let input = `aaaaa'">xsshere`;
 $("#hello-xss").append(`Nothing intresting found? Input = '${escapeOutput(input)}'`);
 ```
 
-but there is a filter, we can't start a new `script` tag. JavaScript implements three characters which identify strings: `'`, `"` and `` ` ``. So payload like: ``xsshere ` ; alert(1)//`` is solution for this level.
+But there is a filter - we can't start a new `script` tag. There are three strings literals in JavaScript: `'`, `"` and `` ` ``. So payload like: ``xsshere ` ; alert(1)//`` is the solution for this level.
 
 
 
@@ -151,3 +149,5 @@ The rest of 10 levels to be continued.
 ## Credits:
 
 @haxel0rd
+
+
