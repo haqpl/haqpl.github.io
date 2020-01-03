@@ -10,6 +10,13 @@ A few months ago I took place in the XSS challenge organized by @haxel0rd and la
 
 <twitter-widget class="twitter-tweet twitter-tweet-rendered" id="twitter-widget-0" style="position: static; visibility: visible; display: block; transform: rotate(0deg); max-width: 100%; width: 500px; min-width: 220px; margin-top: 10px; margin-bottom: 10px;" data-tweet-id="1116822993085325312"></twitter-widget>
 
+<blockquote class="twitter-tweet" data-link-color="#E95F28">
+    <p lang="en" dir="ltr">Can you beat all 10 levels..?
+#XSS #WAF #FilterEvasion #Challenge, from Beginner => Hard, pure XSS, no fantasy vectors. Will post first 7 solvers on my twitter. The challenge starts at login (no-xss), good luck. #Hacking #HackIt #CTF https://u.nu/hackit CodedBy: @ObscurityApp
+        💪 <a href="https://t.co/VLSJ4mPZqy">pic.twitter.com/VLSJ4mPZqy</a></p>&mdash; haxel0rd (@haxel0rd) <a href="https://twitter.com/haxel0rd/status/1116822993085325312">October 12, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script>
+
 Loging in itself is also a baby SQL injection challenge - `admin' OR 1=1-- t` - will do the job bypassing the authentication.
 
 ## Fast XSS methodology:
