@@ -67,7 +67,7 @@ Sometimes the input to the application is passed via URL, we have to identify th
 
 this line is vulnerable, again HTML attribute context but we can't use any of interesting characters because of filtering:
 
-```js
+```javascript
 function escapeOutput(toOutput){
     return toOutput.replace(/\&/g, '&amp;')
         .replace(/\</g, '&lt;')
@@ -93,7 +93,49 @@ This level was solved with unintended solution and introduces to us the next inj
 
 {% include figure.html file="/assets/lvl4.png" alt="/assets/lvl4.png" max-width="500px" number="1" caption="Level 04 - JavaScript context." %}
 
+Developer console shows the JavaScript error: 
 
+{% include figure.html file="/assets/lvl4_1.png" alt="/assets/lvl4_1.png" max-width="500px" number="1" caption="Level 04 - JavaScript error." %}
+
+which tells us that execution of the JavaScript was interupted because of our injected payload. The steps to do in that case are usually the same:
+
+1. Close all opened strings, parentheses, remember that the JavaScript before injection must be "satisfied".
+2. Add `;` as we want to start new instruction.
+3. alert(1)
+4. Deal with code which was there before injection making it as a comment with `//`.
+
+Solution:
+`xsshere'); alert(1)//`
+
+Intended solution:
+
+{% include figure.html file="/assets/lvl4_2.png" alt="/assets/lvl4_2.png" max-width="500px" number="1" caption="Level 04 - JavaScript error." %}
+
+## Lvl05:
+
+{% include figure.html file="/assets/lvl5.png" alt="/assets/lvl5.png" max-width="500px" number="1" caption="Level 05 - JavaScript variable context." %}
+
+This is very similar to the previous level.
+
+We're in the JavaScript context.
+
+```javascript
+                function escapeOutput(toOutput){
+                    return toOutput.replace(/\&/g, '&amp;')
+                        .replace(/\</g, '&lt;')
+                        .replace(/\>/g, '&gt;')
+                        .replace(/\"/g, '&quot;')
+                        .replace(/\'/g, '&#x27')
+                        .replace(/\//g, '&#x2F');
+                }
+
+                let input = `aaaaa'">xsshere`;
+                $("#hello-xss").append(`Nothing intresting found? Input = '${escapeOutput(input)}'`);
+```
+
+but there is a filter, we can't start new `script` tag. JavaScript implements three characters which identify strings: `'`, `"` and `&grave;`. So payload like: `xsshere&grave;; alert(1)//` is solution for this lvl.
+
+## TBC
 
 ## Credits:
 
