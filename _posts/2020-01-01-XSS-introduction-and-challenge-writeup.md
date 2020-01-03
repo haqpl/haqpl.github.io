@@ -104,10 +104,10 @@ Developer console shows the JavaScript error:
 
 which tells us that the execution of the JavaScript was interrupted because of our injected payload. The steps to do in that case are usually the same:
 
-1. Close all opened strings, parentheses, remember that the JavaScript before injection must be "satisfied".
-2. Add `;` as we want to start new instruction.
-3. alert(1)
-4. Deal with code that was there before injection making it as a comment with `//`.
+- Close all opened strings, parentheses, remember that the JavaScript before injection must be "satisfied".
+- Add `;` as we want to start new instruction.
+- alert(1)
+- Deal with code that was there before injection making it as a comment with `//`.
 
 Solution:
 `xsshere'); alert(1)//`
