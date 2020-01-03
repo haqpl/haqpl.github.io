@@ -4,7 +4,7 @@ published: true
 author: Maciej Piechota
 ---
 
-A few months ago I took place in multi-level XSS challenge organized by @haxel0rd and later was asked about explaining my solution. The challenge was divided into levels starting from easy to the hard one, each level was about exploiting different XSS context, which was great in terms of learning sake. I will describe each solution and some theory behind them, so let's dive in.
+A few months ago I took place in multi-level XSS challenge organized by @haxel0rd and later was asked about explaining my solution. The challenge was divided into 10 levels with increasing difficulty. Almost each level was about exploiting different XSS context, which was great in terms of learning sake. I will describe each solution and some schematics behind them, so let's dive in.
 
 ## The challenge:
 
@@ -16,9 +16,9 @@ A few months ago I took place in multi-level XSS challenge organized by @haxel0r
 </center>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Logging in itself is also a baby SQL injection challenge - `admin' OR 1=1-- t` - will do the job bypassing the authentication.
+Logging into the challenge was an entry obstacle itself. It was a simple SQL Injection - `admin' OR 1=1-- t` - did the job, bypassing the authentication.
 
-## Fast XSS methodology:
+## Brief XSS methodology:
 
 First, we want to find out if and where our input is reflected on the attacked page(this is so-called `injection context`), then we have to check what transformations are being made to our payload by the application, giving us the information how CSS/HTML/JavaScript sensitive characters are treated and what possibilities to inject malicious code are left unsecured. To do this in one request let's use the XSS probe:
 `aaaaaa'">xsshere`
