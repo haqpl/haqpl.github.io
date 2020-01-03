@@ -20,7 +20,7 @@ Loging in itself is also a baby SQL injection challenge - `admin' OR 1=1-- t` - 
 
 ## Fast XSS methodology:
 
-First, we want to find out if and where our input is reflected in the attacked page(this is so-called `injection context`), then we have to check what transformations are being made to our payload by the application, giving us the information how CSS/HTML/JavaScript sensitive characters are treated and what possibilities to inject malicious code are left unsecured. To do this in one request let's use the XSS probe:
+First, we want to find out if and where our input is reflected on the attacked page(this is so-called `injection context`), then we have to check what transformations are being made to our payload by the application, giving us the information how CSS/HTML/JavaScript sensitive characters are treated and what possibilities to inject malicious code are left unsecured. To do this in one request let's use the XSS probe:
 `aaaaaa'">xsshere`
 I type this to the interesting input field, submit, and then check the response for `xsshere` string as shown in Lvl01 below. 
 Probe is sent via HTTP/S proxy like Burp and with opened Developer Console in browser to observe JavaScript errors.
