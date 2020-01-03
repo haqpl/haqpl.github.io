@@ -4,7 +4,7 @@ published: true
 author: Maciej Piechota
 ---
 
-A few months ago I took place in multi-level XSS challenge organized by @haxel0rd and later was asked about explaining my solution. The challenge was divided into 10 levels with increasing difficulty. Almost each level was about exploiting different XSS context, which was great in terms of learning sake. I will describe each solution and some schematics behind them, so let's dive in.
+A few months ago I took place in multi-level XSS challenge organized by @haxel0rd with @ObscurityApp and later was asked about explaining my solution. The challenge was divided into 10 levels with increasing difficulty. Almost each level was about exploiting different XSS context, which was great in terms of learning sake. I will describe each solution and some schematics behind them, so let's dive in.
 
 ## The challenge:
 
