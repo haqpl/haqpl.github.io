@@ -16,7 +16,7 @@ A few months ago I took place in the XSS challenge organized by @haxel0rd and la
 </center>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Loging in itself is also a baby SQL injection challenge - `admin' OR 1=1-- t` - will do the job bypassing the authentication.
+Logging in itself is also a baby SQL injection challenge - `admin' OR 1=1-- t` - will do the job bypassing the authentication.
 
 ## Fast XSS methodology:
 
