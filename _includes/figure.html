@@ -1,7 +1,7 @@
 <div>
 <figure>
-    <a href="{{ include.file }}" target="_blank"><img src="{{ include.file }}" style="max-width: {{ include.max-width }}; {% if include.height %} height: {{ include.height }}; {% endif %}"
-                                      alt="{{ include.alt }}"/></a>
+    <a href="{{ include.file }}" data-lightbox="group" data-title="{{ include.caption }}">
+        <img src="{{ include.file }}" alt="{{ include.alt }}"/></a>
     <figcaption>Figure {{ include.number }}. {{ include.caption }}</figcaption>
 </figure>
 <br>
