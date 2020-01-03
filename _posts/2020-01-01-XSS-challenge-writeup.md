@@ -1,15 +1,29 @@
 ---
-title: Automation of KNOXSS extension using Selenium and Python
+title: XSS challenge writeup.
 published: false
 author: Maciej Piechota
 ---
 
-I like to automate some boring stuff I do every day using Python. That's why I decided to write a few lines of code and give life to a semi-automatic XSS scanner which is KNOXSS.
-KNOXSS comes to you as an extension. The author recommends using Gecko based browsers so I chose Firefox in developer edition because it allows you to load extensions using a Web driver  - Selenium. Please notice that I'm not a software architect :) My job was to make it work and solve the problem, if you have any ideas how to improve the code or add any functionalites, please let me know in comments.
+A few months ago I took place in the XSS challenge organized by @haxel0rd and later was asked about explaining my solutions. The challenge was divided into levels starting from easy to the hard one, each level was about exploiting different XSS context, which was great in terms of learning sake. I will describe each solution and some theory behind them, so let's dive in.
 
-## The problem:
+## The challenge:
 
-KNOXSS is a semi-automatic tool which means that you have to manually browse a site you want to scan it for XSS vulnerabilities. I think the add-on deserves automation on its own.
+https://twitter.com/haxel0rd/status/1116822993085325312
+
+Loging in itself is also a baby SQL injection challenge - `admin' OR 1=1-- t` - will do the job bypassing the authentication.
+
+## Fast XSS methodology:
+
+First we want to find out where our input is reflected in the attacked page(this is so called `injection context`), then we have to check what transformations are being made to our payload by the application, giving us the information how CSS/HTML/JavaScript sensitive characters are treated and what possibilities to inject malicious code are left unsecured. To do this in one request let's use the XSS probe:
+`aaaaaa'">xsshere`
+I type this to the interesting input field, submit, and then check the response for `xsshere` string as shown in Lvl01 below: 
+
+## Lvl01:
+
+```html
+<input type="text" class="form-control input-lg" id="search-church" id="xss" value='aaaaaa'">xsshere' name="xss" placeholder="xss">                                                                                                                               ```                                                                                                                               
+
+                                                                                                                                  Ok we see here that our probe broke the rendering of the HTML, this is always a good sign for pentester and worse for a developer :) You can read it as: some of characters from the probe are not encoded properly before reaturning them to the client and interpreted by a browser as legit code, having the influence 
 
 ## Toolbelt:
 
