@@ -4,7 +4,7 @@ published: true
 author: Maciej Piechota
 ---
 
-A few months ago I took place in multi-level XSS challenge organized by @haxel0rd with @ObscurityApp and later was asked about explaining my solution. The challenge was divided into 10 levels with increasing difficulty. Almost each level was about exploiting different XSS context, which was great in terms of learning sake. I will describe each solution and some schematics behind them, so let's dive in.
+A few months ago I took part in a multi-level XSS challenge organized by @haxel0rd with @ObscurityApp and later was asked to explain my solution. The challenge was divided into 10 levels with increasing difficulty. Almost each level was about exploiting different XSS context, which was great for the sake of learning. In this post I will describe each solution and as well as schematics behind them, so let's dive in.
 
 ## The challenge:
 
@@ -20,14 +20,14 @@ Logging into the challenge was an entry obstacle itself. It was a simple SQL Inj
 
 ## Brief XSS methodology:
 
-To start exploiting XSS you first have to find out if and where our input is reflected on the attacked page(this is so-called `injection context`). Then, when we found that, we have to check what transformations are being made to our payload by the application, giving us the information how CSS/HTML/JavaScript sensitive characters are treated and what possibilities to inject malicious code are left unsecured. To do this in one request let's use an XSS probe:
+To start exploiting XSS you first have to find out if and where our input is reflected on the attacked page(this is so-called `injection context`). Once identified, we have to check what transformations are being made to our payload by the application, giving us the information how CSS/HTML/JavaScript sensitive characters are treated and what possibilities to inject malicious code are left unsecured. To do this in one request let's use an XSS probe:
 `aaaaaa'">xsshere`
 I type this to the interesting input field, submit, and check the response for `xsshere` string as shown in Lvl01 below.
 The probe is sent via HTTP/S proxy like Burp and with opened Developer Console in browser to observe JavaScript errors.
 
 ## Lvl01:
 
-By following the steps from “Brief XSS methology” we can see here that our probe broke the rendering of the HTML - this is usually a good sign for pentester and not that good for a developer :) You can read it as: some of the probe’s characters  are not properly encoded/escaped  before returning them to the client and therefore interpreted by a browser as a legit code, having an influence on the final look/JavaScript workflow of the page.
+By following the steps from “Brief XSS methology” we can see here that our probe broke the rendering of the HTML - this is usually a good sign for a pentester and not that good for a developer :) You can read it as: some of the probe’s characters are not properly encoded/escaped  before returning them to the client and therefore interpreted by a browser as a legitimate code, having an influence on the final look/JavaScript workflow of the page.
 
 {% include figure.html file="/assets/lvl01.png" alt="/assets/lvl01.png" max-width="500px" number="1" caption="Localizing the injection context." %}
                                                                                                                                   
@@ -37,7 +37,7 @@ By following the steps from “Brief XSS methology” we can see here that our p
 
 `’` character closed an attribute, `>` closed the tag and the rest was rendered as text.
 
-We have here `HTML attribute injection context`. The HTML attributes can be enclosed by characters: `'`, `"` or they can appear without anything - up to the first white character so injecting `'` will close the attribute and allow us to add a new one or just close HTML tag with `>` character. This happened in the example above - `input` tag was closed, so we can inject a new tag. To achieve our goal - execute `alert(1)` we have to inject `<script>alert(1)</script>`.
+Here, we have an `HTML attribute injection context`. The HTML attributes can be enclosed by characters: `'`, `"` or they can appear without anything - up to the first white character so injecting `'` will close the attribute and allow us to add a new one or just close HTML tag with `>` character. This happened in the example above - `input` tag was closed, so we can inject a new tag. To achieve our goal - execute `alert(1)` we have to inject `<script>alert(1)</script>`.
 
 Final payload:
 
@@ -53,7 +53,7 @@ Add a dummy attribute value inside an input, close the attribute, close the inpu
 
 ## Lvl02:
 
-In level 2, the probe from Lvl01 also ended up in the `HTML attribute context` but this time the `>` character is properly escaped to its HTML equivalent: `&gt;` which makes it hard to escape from the context but it doesn't mean we can't inject new attributes. To achieve our goal we have to use HTML events which as value takes JavaScript.
+At the level 2, the probe from Lvl01 also ended up in the `HTML attribute context` but this time the `>` character is properly escaped to its HTML equivalent: `&gt;` therefore, it makes it hard to escape from the context but it doesn't mean we can't inject new attributes. To achieve our goal we have to use HTML events which as value takes JavaScript.
 
 {% include figure.html file="/assets/lvl2.png" alt="/assets/lvl2.png" max-width="500px" number="3" caption="Level 02." %}
 
