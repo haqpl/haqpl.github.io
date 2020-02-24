@@ -11,4 +11,6 @@ I specialize in web application penetration testing but red-teaming is also my c
 
 Currently based in Lodz, Poland. Looking for remote job opportunities!
 
+haqpl @ (justCatTheFish)[https://ctftime.org/team/33893]
+
 
