@@ -1,5 +1,5 @@
 ---
-title: Lovely nonces (ASIS CTF Quals 2021): the unintended way.
+title: Lovely nonces (ASIS CTF Quals 2021) the unintended way.
 published: true
 author: Maciej Piechota & Arusekk
 ---
