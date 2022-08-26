@@ -1,5 +1,5 @@
 ---
-title: justCatTheFish - Google CTF 2022 - Postviewer writeup.
+title: New technique of stealing data using CSS and Scroll-to-Text Fragment feature.
 published: true
 author: haqpl
 ---
