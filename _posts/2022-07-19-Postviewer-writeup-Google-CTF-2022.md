@@ -4,7 +4,7 @@ published: true
 author: haqpl
 ---
 
-# Challenge description
+## Challenge description
 
 Postviewer was one of the web category tasks in Google CTF 2022. The author of the task - terjanq - prepared for us a client-side application whose purpose was to host files. This was realized by storing them in IndexedDB - a builtin browser API for storing data. From the task's description, we know that our objective is to steal the admin's files. 
 
