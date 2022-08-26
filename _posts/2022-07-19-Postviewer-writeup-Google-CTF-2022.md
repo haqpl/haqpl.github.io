@@ -1,4 +1,3 @@
-
 ---
 title: justCatTheFish - Google CTF 2022 - Postviewer writeup.
 published: true
